@@ -1,7 +1,37 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Stop.create(stop_name: 'San Francisco', zone: 1, latitude: 37.77666, longitude: -122.39470)
+Stop.create(stop_name: '22nd Street', zone: 1, latitude: 37.75752, longitude: -122.39268)
+Stop.create(stop_name: 'Bayshore', zone: 1, latitude: 37.70971, longitude: -122.40137)
+Stop.create(stop_name: 'South San Francisco', zone: 1, latitude: 37.65756, longitude: -122.40555)
+Stop.create(stop_name: 'San Bruno', zone: 1, latitude: 37.63237, longitude: -122.41238)
+#Zone 2
+Stop.create(stop_name: 'Millbrae', zone: 2, latitude: 37.59912, longitude: -122.38667)
+Stop.create(stop_name: 'Broadway (Weekend Only)', zone: 2, latitude: 37.58756, longitude: -122.36293)
+Stop.create(stop_name: 'Burlingame', zone: 2, latitude: 37.57951, longitude: -122.34492)
+Stop.create(stop_name: 'San Mateo', zone: 2, latitude: 37.56805, longitude: -122.32400)
+Stop.create(stop_name: 'Hayward Park', zone: 2, latitude: 37.55512, longitude: -122.30820)
+Stop.create(stop_name: 'Hillsdale', zone: 2, latitude: 37.53812, longitude: -122.29802)
+Stop.create(stop_name: 'Belmont', zone: 2, latitude: 37.52407, longitude: -122.28082)
+Stop.create(stop_name: 'San Carlos', zone: 2, latitude: 37.50756, longitude: -122.26000)
+Stop.create(stop_name: 'Redwood City', zone: 2, latitude: 37.48542, longitude: -122.23191)
+#Zone 3
+Stop.create(stop_name: 'Atherton (Weekend Only)', zone: 3, latitude: 37.46322, longitude: -122.19646)
+Stop.create(stop_name: 'Menlo Park', zone: 3, latitude: 37.45457, longitude: -122.18245)
+Stop.create(stop_name: 'Palo Alto', zone: 3, latitude: 37.44342, longitude: -122.16517)
+Stop.create(stop_name: 'Stanford (Football Only)', zone: 3, latitude: 37.43844, longitude: -122.15554)
+Stop.create(stop_name: 'California Ave.', zone: 3, latitude: 37.42855, longitude: -122.14278)
+Stop.create(stop_name: 'San Antonio', zone: 3, latitude: 37.40720, longitude: -122.10716)
+Stop.create(stop_name: 'Mountain View', zone: 3, latitude: 37.39377, longitude: -122.07664)
+Stop.create(stop_name: 'Sunnyvale', zone: 3, latitude: 37.37803, longitude: -122.03036)
+#Zone 4
+Stop.create(stop_name: 'Lawrence', zone: 4, latitude: 37.37155, longitude: -121.99696)
+Stop.create(stop_name: 'Santa Clara', zone: 4, latitude: 37.35325, longitude: -121.93651)
+Stop.create(stop_name: 'College Park', zone: 4, latitude: 37.34166, longitude: -121.91449)
+Stop.create(stop_name: 'San Jose Diridon', zone: 4, latitude: 37.32990, longitude: -121.90246)
+Stop.create(stop_name: 'Tamien (SJ to Gilroy Only)', zone: 4, latitude: 37.31172, longitude: -121.88256)
+#Zone 5
+Stop.create(stop_name: 'Capitol (SJ to Gilroy Only)', zone: 5, latitude: 37.28382, longitude: -121.84104)
+Stop.create(stop_name: 'Blossom Hill (SJ to Gilroy Only)', zone: 5, latitude: 37.25299, longitude: -121.79759)
+#Zone 6
+Stop.create(stop_name: 'Morgan Hill (SJ to Gilroy Only)', zone: 6, latitude: 37.12916, longitude: -121.65029)
+Stop.create(stop_name: 'San Martin (SJ to Gilroy Only)', zone: 5, latitude: 37.08565, longitude: -121.61083)
+Stop.create(stop_name: 'Gilroy (SJ to Gilroy Only)', zone: 5, latitude: 37.00364, longitude: -121.56715)
