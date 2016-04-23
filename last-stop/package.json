@@ -1,0 +1,30 @@
+{
+  "name": "LastStop",
+  "version": "0.0.1",
+  "description": "== README",
+  "main": "client/main.jsx",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "start": "webpack-dev-server -d --config webpack.config.js --content-base public/ --progress --colors",
+    "build": "webpack -d --config webpack.config.js --profile --progress --colors"
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "dependencies": {
+    "css-loader": "^0.9.1",
+    "jsuri": "^1.3.0",
+    "jsx-loader": "^0.12.2",
+    "react": "^0.12.2",
+    "react-router": "^0.12.4",
+    "reqwest": "^1.1.5",
+    "style-loader": "^0.8.3",
+    "webpack": "^1.6.0",
+    "webpack-dev-server": "^1.8.0"
+  }
+}

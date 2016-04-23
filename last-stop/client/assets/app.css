@@ -1,0 +1,8 @@
+body {background: #F5F8FA; color: #777;}
+#app {position: relative; padding-left: 0; cursor: default;}
+#content {max-width: 800px; margin: 4em auto; padding: 0 2em; line-height: 1.5em;}
+.pure-form input[type=text], button.pure-button {padding-top: 0.6em; padding-bottom: 0.5em}
+button.pure-button {border: 1px solid #0078E7; border-radius: 4px; margin-left: 5px;}
+ul {list-style: none; margin: 0; padding: 0;}
+a, a:focus, a:active {outline: none;}
+.thin {font-weight: 200;}
