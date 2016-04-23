@@ -3,10 +3,10 @@ development:
   clients:
     # Defines the default client. (required)
     default:
-        <%=ENV['MONGODB_URI']$>
+        <%=EVN[MONGODB_URI]%>
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
-      database:
+      database: last_stop_development
       # Provides the hosts the default client can connect to. Must be an array
       # of host:port pairs. (required)
       hosts:
