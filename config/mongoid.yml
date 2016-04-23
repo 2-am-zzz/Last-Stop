@@ -3,7 +3,6 @@ development:
   clients:
     # Defines the default client. (required)
     default:
-        <%=ENV["MONGODB_URI"]%>
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
       database: last_stop_development
@@ -138,6 +137,18 @@ test:
       hosts:
         - localhost:27017
       options:
+        read:
+          mode: :primary
+        max_pool_size: 1
+production:
+  clients:
+    default:
+      database: last-stop
+      hosts:
+        - ds019101.mlab.com:19101
+      options:
+        user: 'dbadmin'
+        password: 'admin'
         read:
           mode: :primary
         max_pool_size: 1
