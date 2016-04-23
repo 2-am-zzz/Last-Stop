@@ -4,7 +4,6 @@ development:
       database: last_stop_development
       hosts:
         - localhost:27017
-        - ENV['MONGODB_URI']
       options:
   options:
 test:
@@ -13,7 +12,6 @@ test:
       database: last_stop_test
       hosts:
         - localhost:27017
-        - ENV['MONGODB_URI']
       options:
         read:
           mode: :primary
@@ -30,4 +28,4 @@ production:
         password: ENV['MONGODB_PASSWORD']
         read:
           mode: :primary
-        max_pool_size: 1
+        max_pool_size: 5
