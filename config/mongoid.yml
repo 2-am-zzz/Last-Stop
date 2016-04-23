@@ -1,0 +1,30 @@
+production:
+  clients:
+    default:
+      database: last-stop
+      hosts:
+        - ENV['MONGODB_URI']
+      options:
+        user: ENV['MONGODB_USER']
+        password: ENV['MONGODB_PASSWORD']
+        read:
+          mode: :primary
+        max_pool_size: 5
+development:
+  clients:
+    default:
+      database: last_stop_development
+      hosts:
+        - localhost:27017
+      options:
+  options:
+test:
+  clients:
+    default:
+      database: last_stop_test
+      hosts:
+        - localhost:27017
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 1
