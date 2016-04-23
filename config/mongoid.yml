@@ -18,15 +18,19 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+# production:
+#   clients:
+#     default:
+#       database: last-stop
+#       hosts:
+#         - ENV['MONGODB_URI']
+#       options:
+#         user: ENV['MONGODB_USER']
+#         password: ENV['MONGODB_PASSWORD']
+#         read:
+#           mode: :primary
+#         max_pool_size: 1
 production:
   clients:
     default:
-      database: last-stop
-      hosts:
-        - ENV['MONGODB_URI']
-      options:
-        user: ENV['MONGODB_USER']
-        password: ENV['MONGODB_PASSWORD']
-        read:
-          mode: :primary
-        max_pool_size: 1
+        uri: ENV['MLAB_URI']
