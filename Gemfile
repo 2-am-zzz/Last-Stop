@@ -5,7 +5,7 @@ gem 'rails', '4.2.6'
 gem 'rails-api'
 gem 'spring', :group => :development
 
-gem 'mongoid', '~> 5.1.0'
+gem 'mongoid'
 gem 'bson', '~> 3.0'
 gem 'geocoder', '~> 1.3', '>= 1.3.4'
 

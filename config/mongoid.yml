@@ -19,7 +19,6 @@ test:
 production:
   clients:
     default:
-      # uri: ENV['MLAB_URI']
       database: last-stop
       hosts:
         - ENV['MONGODB_URI']
