@@ -144,11 +144,10 @@ production:
   clients:
     default:
       database: last-stop
-      hosts:
-        - ds019101.mlab.com:19101
+      hosts: ENV['MONGODB_URI']
       options:
-        user: 'dbadmin'
-        password: 'admin'
+        user: ENV['MONGODB_USER']
+        password: ENV['MONGODB_PASSWORD']
         read:
           mode: :primary
         max_pool_size: 1
