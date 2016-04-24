@@ -192,3 +192,10 @@ Stop.create(service_id: 3, direction_id: 1, agency_id: "CalTrain", stop_name: 'S
 Stop.create(service_id: 3, direction_id: 1, agency_id: "CalTrain", stop_name: 'Lawrence', stop_lat: 37.37155, stop_lon: -121.99696, departure_time: "22:40:00")
 Stop.create(service_id: 3, direction_id: 1, agency_id: "CalTrain", stop_name: 'Santa Clara', stop_lat: 37.35325, stop_lon: -121.93651, departure_time: "22:35:00")
 Stop.create(service_id: 3, direction_id: 1, agency_id: "CalTrain", stop_name: 'San Jose Diridon', stop_lat: 37.32990, stop_lon: -121.90246, departure_time: "22:30:00")
+
+Stop.all.each do |stop|
+  stop.route_id = 1
+  stop.route_short = "CT"
+  stop.route_long = "CalTrain"
+  stop.save
+end
