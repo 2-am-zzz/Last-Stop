@@ -1,5 +1,4 @@
 Rails.application.configure do
-  require 'mongo'
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -74,5 +73,4 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-  Mongo:Client.new(ENV['MLAB_URI'])
 end
