@@ -1,7 +1,7 @@
 production:
   clients:
     default:
-      uri: ENV['MONGODB_URI']
+      uri: <%= ENV['MONGODB_URI'] %>
       # uri: 'mongodb://dbadmin:admin@ds019101.mlab.com:19101/last-stop'
       # database: last-stop
       # hosts:
