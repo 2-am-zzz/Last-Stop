@@ -12,7 +12,6 @@
     "build": "webpack -d --config webpack.config.js --profile --progress --colors",
     "prod": "NODE_ENV=production node server.js",
     "postinstall": "webpack -p"
-
   },
   "author": "",
   "license": "ISC",
