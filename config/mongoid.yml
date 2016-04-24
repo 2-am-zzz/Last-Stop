@@ -2,6 +2,8 @@ production:
   clients:
     default:
       database: last-stop
+      hosts:
+        - ENV['MONGODB_URI']
       # uri: ENV['MLAB_URI']
       options:
         user: ENV['MONGODB_USER']
