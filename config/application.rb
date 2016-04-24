@@ -1,5 +1,4 @@
 require File.expand_path('../boot', __FILE__)
-run Rails.application
 
 require "rails"
 # Pick the frameworks you want:
