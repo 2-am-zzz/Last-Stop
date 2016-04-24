@@ -21,7 +21,7 @@
 
 @media (min-width: 48em) {
   #menu-link {display: none; position: fixed; left: 150px;}
-  #app {left: 0; padding-left: 150px;}
+  #app {left: 0; padding-left: 0;}
   #app.show-menu #menu-link {left: 150px;}
   #menu-list {left: 150px;}
 }

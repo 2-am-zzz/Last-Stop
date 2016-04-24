@@ -1,10 +1,10 @@
 var React = require('react');
-var View = require('../laststop/List.jsx');
+var View = require('../Frame/Frame.jsx');
 
 module.exports = React.createClass({
   render: function() {
     return(
-      <div id="content">
+      <div id="container">
         <View/>
       </div>
     )
