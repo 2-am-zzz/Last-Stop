@@ -22,6 +22,7 @@ class Stop
   end
 
   def self.near(location)
+    stops_arr = []
     if DateTime.now.wday == 0
       service_id = 2
     elsif Datetime.now.wday == 6
@@ -29,8 +30,13 @@ class Stop
     else
       service_id = 0
     end
-    stops = Stop.geo_near(location).max_distance(0.01)
-    stops.find(service_id: service_id)
+    stops = Stop.geo_near(location).max_distance(0.01).to_a
+    stops.each do |stop|
+      if stop.service_id == service_id
+        stops_arr << stop
+      end
+    end
+    p stops_arr
   end
 
 end
