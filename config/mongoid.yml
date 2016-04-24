@@ -1,7 +1,14 @@
 production:
   clients:
     default:
-      uri: ENV['MLAB_URI']
+      database: last-stop
+      # uri: ENV['MLAB_URI']
+      options:
+        user: ENV['MONGODB_USER']
+        password: ENV['MONGODB_PASSWORD']
+        read:
+          mode: :primary
+        max_pool_size: 5
 development:
   clients:
     default:
