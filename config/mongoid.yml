@@ -1,7 +1,6 @@
 production:
   clients:
     default:
-      database: last-stop
       URI: ENV['MLAB_URI']
 development:
   clients:
