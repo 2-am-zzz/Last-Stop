@@ -11,8 +11,7 @@ require "action_view/railtie"
 require "sprockets/railtie"
 require "rails/test_unit/railtie"
 require 'mongoid'
-Mongoid.load!('mongoid.yml', :production)
-# Mongoid.load!(File.expand_path('mongoid.yml', './config'))
+Mongoid.load!(File.expand_path('mongoid.yml', './config'), :production)
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
