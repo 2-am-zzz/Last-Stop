@@ -1,6 +1,6 @@
 class Stop
   include Mongoid::Document
-
+  require 'csv'
   field :route_id, type: Integer
   field :route_short, type: String
   field :route_long, type: String
@@ -23,10 +23,6 @@ class Stop
 
   def self.near(location)
     Stop.geo_near(location).max_distance(0.0145)
-  end
-
-  def self.test
-    Stop.first
   end
 
 end
