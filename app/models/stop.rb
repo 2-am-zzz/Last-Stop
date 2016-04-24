@@ -1,6 +1,6 @@
 class Stop
   include Mongoid::Document
-  require 'csv'
+
   field :route_id, type: Integer
   field :route_short, type: String
   field :route_long, type: String
