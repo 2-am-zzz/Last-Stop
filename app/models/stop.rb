@@ -25,8 +25,4 @@ class Stop
     Stop.geo_near(location).max_distance(0.0145)
   end
 
-  def self.test
-    Stop.first
-  end
-
 end
