@@ -1,7 +1,8 @@
 production:
   clients:
     default:
-      uri: ENV['MLAB_URI']
+      # uri: ENV['MLAB_URI']
+      uri: 'mongodb://dbadmin:admin@ds019101.mlab.com:19101/last-stop'
       # database: last-stop
       # hosts:
       #   - ENV['MONGODB_URI']
