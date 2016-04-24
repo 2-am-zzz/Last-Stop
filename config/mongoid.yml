@@ -1,7 +1,7 @@
 production:
   clients:
     default:
-      URI: ENV['MLAB_URI']
+      uri: ENV['MLAB_URI']
 development:
   clients:
     default:
