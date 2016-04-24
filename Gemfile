@@ -9,6 +9,8 @@ gem 'mongoid'
 gem 'bson', '~> 3.0'
 gem 'geocoder', '~> 1.3', '>= 1.3.4'
 
+gem 'rails_12factor'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
