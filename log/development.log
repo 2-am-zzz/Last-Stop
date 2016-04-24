@@ -668,3 +668,23 @@ Completed 200 OK in 2ms (Views: 0.4ms)
 Started GET "/apis/stops" for ::1 at 2016-04-24 00:45:53 -0700
 Processing by StopsController#index as JSON
 Completed 200 OK in 1ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 01:27:12 -0700
+Processing by StopsController#index as HTML
+Completed 200 OK in 43ms (Views: 0.6ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 01:45:28 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 01:45:59 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.3ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 01:46:10 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.4ms)
