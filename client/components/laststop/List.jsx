@@ -34,12 +34,11 @@ var request = require('superagent');
         <div>
           {this.state.agency}
           <ul>
-          <li>{this.state.departure_time}</li>
-          <li>{this.state.direction_id}</li>
-          <li>{this.state.stop_lat}</li>
-          <li>{this.state.stop_lon}</li>
-          <li>{this.state.stop_name}</li>
-
+            <li>{this.state.departure_time}</li>
+            <li>{this.state.direction_id}</li>
+            <li>{this.state.stop_lat}</li>
+            <li>{this.state.stop_lon}</li>
+            <li>{this.state.stop_name}</li>
           </ul>
         </div>
       );

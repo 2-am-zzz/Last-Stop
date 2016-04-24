@@ -688,3 +688,13 @@ Completed 200 OK in 2ms (Views: 0.3ms)
 Started GET "/apis/stops" for ::1 at 2016-04-24 01:46:10 -0700
 Processing by StopsController#index as JSON
 Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 01:48:59 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.3ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 01:58:05 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.3ms)
