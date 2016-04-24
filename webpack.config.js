@@ -6,10 +6,10 @@ module.exports = {
   },
   module: {
     loaders: [
-        { test: /\.css$/, loader: 'style!css' },
-        {test: /\.css$/, loader: 'style!css'},
+        { test: /\.jsx$/, exclude: /assets/, loader: 'jsx-loader' },
+        { test: /\.css$/, include: /assets/,loader: 'style-loader!css-loader'},
         {
-          exclude: [/node_modules/, /bower_components/],
+          exclude: [/node_modules/, /bower_components/, /assets/],
           loader: 'babel',
           query: {
             presets: ['es2015', 'react']

@@ -9,8 +9,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server -d --config webpack.config.js --content-base public/ --progress --colors",
-    "build": "webpack -d --config webpack.config.js --profile --progress --colors",
-    "postinstall": "webpack -p"
+    "build": "webpack -d --config webpack.config.js --profile --progress --colors"
   },
   "author": "",
   "license": "ISC",

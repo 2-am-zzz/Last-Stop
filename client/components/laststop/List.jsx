@@ -15,7 +15,7 @@ var request = require('superagent');
     },
     componentWillMount: function() {
       request
-        .get('http://localhost:3000/apis/stops')
+        .get('http://last-stop.herokuapp.com/apis/stops')
         .end(function(err, res) {
           var data = JSON.parse(res.text)
           this.setState({
