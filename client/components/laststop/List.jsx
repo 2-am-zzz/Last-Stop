@@ -2,7 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var request = require('superagent');
 
-  module.exports = React.createClass({
+  var List = React.createClass({
     getInitialState: function() {
       return {
         agency: "",
@@ -16,7 +16,6 @@ var request = require('superagent');
     componentWillMount: function() {
       request
         .get('http://localhost:3000/apis/stops')
-        .set({Accept: 'application/json' })
         .end(function(err, res) {
           var data = JSON.parse(res.text)
           this.setState({
@@ -44,3 +43,5 @@ var request = require('superagent');
       );
     }
   });
+
+module.exports = List;
