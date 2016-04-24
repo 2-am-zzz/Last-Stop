@@ -22,7 +22,15 @@ class Stop
   end
 
   def self.near(location)
-    Stop.geo_near(location).max_distance(0.01)
+    if DateTime.now.wday == 0
+      service_id = 2
+    elsif Datetime.now.wday == 6
+      service_id = 1
+    else
+      service_id = 0
+    end
+    stops = Stop.geo_near(location).max_distance(0.01)
+    stops.find(service_id: service_id)
   end
 
 end
