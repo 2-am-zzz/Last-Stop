@@ -2,16 +2,6 @@ production:
   clients:
     default:
       uri: <%= ENV['MONGODB_URI'] %>
-      # uri: 'mongodb://dbadmin:admin@ds019101.mlab.com:19101/last-stop'
-      # database: last-stop
-      # hosts:
-      #   - ENV['MONGODB_URI']
-      # options:
-      #   user: ENV['MONGODB_USER']
-      #   password: ENV['MONGODB_PASSWORD']
-      #   read:
-      #     mode: :primary
-      #   max_pool_size: 5
 development:
   clients:
     default:
