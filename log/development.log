@@ -134,3 +134,537 @@ Completed 200 OK in 6ms (Views: 5.5ms)
 Started GET "/apis/stops" for ::1 at 2016-04-23 15:32:04 -0700
 Processing by StopsController#index as HTML
 Completed 200 OK in 5ms (Views: 4.1ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 17:38:08 -0700
+
+SyntaxError (/Users/Kromotos/Desktop/LastStop1/app/controllers/application_controller.rb:2: syntax error, unexpected ':', expecting keyword_end
+  before_action: allow_cross_origin_requests,...
+                ^):
+  app/controllers/application_controller.rb:2: syntax error, unexpected ':', expecting keyword_end
+  app/controllers/stops_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Kromotos/.rvm/gems/ruby-2.0.0-p648/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/Kromotos/.rvm/gems/ruby-2.0.0-p648/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/Kromotos/.rvm/gems/ruby-2.0.0-p648/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/Kromotos/.rvm/gems/ruby-2.0.0-p648/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.9ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 17:38:29 -0700
+Processing by StopsController#index as HTML
+Completed 200 OK in 17ms (Views: 0.5ms)
+
+
+Started OPTIONS "/apis/stops" for ::1 at 2016-04-23 17:44:30 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"apis/stops"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 7ms (Views: 6.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 17:44:30 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 9ms (Views: 0.6ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 17:47:37 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 17:48:13 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 3ms (Views: 1.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 21:37:53 -0700
+Processing by StopsController#index as HTML
+Completed 200 OK in 66ms (Views: 1.0ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:11:20 -0700
+Processing by StopsController#index as HTML
+Completed 200 OK in 5ms (Views: 1.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:13:41 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 4ms (Views: 2.3ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:14:01 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:14:18 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:14:20 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 3ms (Views: 1.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:14:28 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 4ms (Views: 1.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:14:33 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:15:05 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 3ms (Views: 1.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:17:08 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 3ms (Views: 1.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:17:17 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:17:25 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 5ms (Views: 2.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:17:32 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:18:15 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:18:23 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 1ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:18:33 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 1ms (Views: 0.3ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:19:34 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.5ms)
+
+
+Started GET "/apis/stops?query=%22agency_id%22" for ::1 at 2016-04-23 22:21:38 -0700
+Processing by StopsController#index as HTML
+  Parameters: {"query"=>"\"agency_id\""}
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops?format=json" for ::1 at 2016-04-23 22:22:36 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.5ms)
+
+
+Started GET "/apis/stops?format=json" for ::1 at 2016-04-23 22:22:45 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops?format=json" for ::1 at 2016-04-23 22:22:53 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops?format=json" for ::1 at 2016-04-23 22:22:59 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops?format=json" for ::1 at 2016-04-23 22:23:10 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.5ms)
+
+
+Started GET "/apis/stops?format=json" for ::1 at 2016-04-23 22:23:16 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.6ms)
+
+
+Started GET "/apis/stops?format=json" for ::1 at 2016-04-23 22:23:22 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started OPTIONS "/apis/stops" for ::1 at 2016-04-23 22:25:39 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"apis/stops"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 20ms (Views: 20.3ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:25:39 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 3ms (Views: 0.6ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:25:49 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:25:58 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:26:04 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:26:11 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:26:17 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:26:22 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.7ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:26:37 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:27:33 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:27:54 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 1ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:28:03 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started OPTIONS "/apis/stops" for ::1 at 2016-04-23 22:35:52 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"apis/stops"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 0ms (Views: 0.3ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:35:52 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:36:31 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 2ms (Views: 0.3ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:36:42 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 1ms (Views: 0.4ms)
+
+
+Started GET "/apis/" for ::1 at 2016-04-23 22:36:59 -0700
+
+ActionController::RoutingError (No route matches [GET] "/apis"):
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Kromotos/.rvm/rubies/ruby-2.0.0-p648/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/Kromotos/.rvm/rubies/ruby-2.0.0-p648/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/Kromotos/.rvm/rubies/ruby-2.0.0-p648/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Kromotos/.rvm/gems/ruby-2.0.0-p648/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/Kromotos/.rvm/gems/ruby-2.0.0-p648/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /Users/Kromotos/.rvm/gems/ruby-2.0.0-p648/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (23.1ms)
+  Rendered /Users/Kromotos/.rvm/gems/ruby-2.0.0-p648/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Kromotos/.rvm/gems/ruby-2.0.0-p648/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (83.1ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 22:37:04 -0700
+Processing by StopsController#index as HTML
+Completed 200 OK in 2ms (Views: 0.6ms)
+
+
+Started OPTIONS "/apis/stops" for ::1 at 2016-04-23 23:34:08 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"apis/stops"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 3ms (Views: 2.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-23 23:34:08 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 8ms (Views: 0.6ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:09:00 -0700
+Processing by StopsController#index as HTML
+Completed 200 OK in 18ms (Views: 3.7ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:12:25 -0700
+Processing by StopsController#index as HTML
+Completed 200 OK in 6ms (Views: 1.7ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:12:26 -0700
+Processing by StopsController#index as HTML
+Completed 200 OK in 8ms (Views: 1.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:12:26 -0700
+Processing by StopsController#index as HTML
+Completed 200 OK in 4ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:12:27 -0700
+Processing by StopsController#index as HTML
+Completed 200 OK in 6ms (Views: 2.7ms)
+
+
+Started OPTIONS "/apis/stops" for ::1 at 2016-04-24 00:18:11 -0700
+Processing by ApplicationController#preflight as */*
+  Parameters: {"all"=>"apis/stops"}
+  Rendered text template (0.0ms)
+Completed 200 OK in 21ms (Views: 20.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:18:11 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 4ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:18:24 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 4ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:18:36 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 3ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:20:19 -0700
+Processing by StopsController#index as */*
+Completed 200 OK in 5ms (Views: 1.3ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:20:19 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 3ms (Views: 0.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:20:25 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 7ms (Views: 3.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:20:41 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:20:59 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:22:50 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 3ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:22:54 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:23:32 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 9ms (Views: 1.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:25:01 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 5ms (Views: 1.6ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:25:17 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 8ms (Views: 6.2ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:25:30 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 10ms (Views: 3.8ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:25:49 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 4ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:26:05 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 4ms (Views: 1.7ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:27:54 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 3ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:30:48 -0700
+Processing by StopsController#index as HTML
+Completed 200 OK in 3ms (Views: 1.7ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:30:52 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:32:09 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:32:12 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:32:26 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 3ms (Views: 1.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:33:40 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:33:42 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.7ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:34:05 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:34:07 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:34:16 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.5ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:34:20 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:34:29 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:34:43 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:34:54 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.3ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:36:12 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:38:19 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:41:47 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 3ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:42:57 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:43:30 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:43:40 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:44:27 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:45:40 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 2ms (Views: 0.4ms)
+
+
+Started GET "/apis/stops" for ::1 at 2016-04-24 00:45:53 -0700
+Processing by StopsController#index as JSON
+Completed 200 OK in 1ms (Views: 0.4ms)

@@ -5,4 +5,4 @@ require('./assets/laststop.css');
 var React = require('react');
 var App = require('./components/layout/App.jsx');
 
-React.render(<App/>, document.body);
+React.render(<App />, document.getElementById('app'));
