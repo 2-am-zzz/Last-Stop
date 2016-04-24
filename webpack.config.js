@@ -9,7 +9,7 @@ module.exports = {
         { test: /\.css$/, loader: 'style!css' },
         {test: /\.css$/, loader: 'style!css'},
         {
-          exclude: /node_modules/,
+          exclude: [/node_modules/, /bower_components/],
           loader: 'babel',
           query: {
             presets: ['es2015', 'react']
