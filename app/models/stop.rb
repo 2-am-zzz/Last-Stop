@@ -22,11 +22,7 @@ class Stop
   end
 
   def self.near(location)
-    Stop.geo_near(location).max_distance(0.0145)
-  end
-
-  def self.test
-    Stop.first
+    Stop.geo_near(location).max_distance(0.01)
   end
 
 end
