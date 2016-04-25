@@ -3,11 +3,20 @@ A DevBootcamp final project focusing on alerting users of the time of the last b
 
 ## MVP
 
+- A user can see the Front page, which has multiple sections for each transit agency with stops nearby.
+- A user can see that each section will have the remaining time left until the last train or bus leaves for each nearby line for each nearby stop.
+- The user's current location should be used as the reference point for finding the closest stations.
 
 
 ## Tech Stack
-<!-- - React Native (iOS, Android)
-- Rails API --> 
+- Rails API backend
+- Mongoid MongoDB driver.
+- mLab for our database solution and hosting MongoDB
+- Heroku for hosting
+- GoDaddy for our domain name
+- React Frontend
+- Bootstrap CSS Framework
+- SFMTA, BART, and Caltrain Datasets
 
 ## Team Dynamics
 
