@@ -2,11 +2,11 @@
 var React = require('react');
 var _ = require('lodash');
 
-var Agencies = React.createClass({
-  AgencyOptions: {
-    "AC Transit": {
+var Orderer = React.createClass({
+  OrderOptions: {
+    "CalTrain": {
       "field": "created_at",
-      "icon": "fa fa-bus"
+      "icon": "fa fa-train"
     },
     "Bart": {
       "field": "votes",
@@ -15,22 +15,18 @@ var Agencies = React.createClass({
     "Muni": {
       "field": "freshness",
       "icon": "fa fa-bus"
-    },
-    "Cal Train": {
-      "field": "shot shit",
-      "icon": "fa fa-train"
     }
   },
 
   render: function() {
     return (
       <div className="row order-selector">
-        {_.map(this.AgencyOptions, function(val, key) {
-          return <div className="order-option col-lg-3 col-md-3 col-xs-3 clickable" key={val.field}><i className={val.icon}></i> {key}</div>
+        {_.map(this.OrderOptions, function(val, key) {
+          return <div className="order-option col-lg-4 col-md-4 col-xs-4 clickable" key={val.field} onClick={this.props.onSelect.bind(null, val.field)}><i className={val.icon}></i> {key}</div>
         }.bind(this))}
       </div>
     );
   }
 });
 
-module.exports = Agencies;
+module.exports = Orderer;
