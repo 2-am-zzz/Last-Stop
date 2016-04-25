@@ -24,9 +24,9 @@ class Stop
   def self.near(location)
     day = DateTime.now.wday
     case day
-      when 0
+      when "0"
         service_id = 3
-      when 6
+      when "6"
         service_id = 2
       else
         service_id = 1
