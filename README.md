@@ -16,7 +16,7 @@ A DevBootcamp final project focusing on alerting users of the time of the last b
 - GoDaddy for our domain name
 - React Frontend
 - Bootstrap CSS Framework
-- SFMTA, BART, and Caltrain Datasets
+- SFMTA, AC Trans, BART, and Caltrain Datasets
 
 ## Team Dynamics
 
@@ -30,18 +30,22 @@ A DevBootcamp final project focusing on alerting users of the time of the last b
 ### StandUps
 1. 9am
 2. 2pm
-3. 6pm <- 360 Feedback 
-..* What did they do from yesterday?
-..* What are they working on today?
-..* Current roadblocks.
-..* ASK feedback.
+3. 6pm <- 360 Feedback
+  * How are they doing?
+  * What did they do from yesterday?
+  * What are they working on today?
+  * Current roadblocks.
+  * ASK feedback.
 
 ### Slice/Pairing
 - 2 Pairs of 2
 - Pair that created PR does not merge their own PR.
-- One that created PR does not merge their own PR.
 - Pair swap for merge to fix and solve merge conflicts.
-- Branch for each feature.  
+- Branch for each feature.
 
-
+### Database Update Procedure
+- mongoimport -h <host> -d last-stop -c <collection> -u <user> -p <password> --file <input .csv file> --type csv --headerline
+- mongo <host> -u <dbuser> -p <dbpassword>
+- db.stops.ensureIndex({loc:"2d"});
+- db.stops.find().batchSize(20).forEach( function(r) { r.loc = [r.stop_lat, r.stop_lon]; db.stops.save(r); });
 
