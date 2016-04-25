@@ -30,6 +30,35 @@ a, a:focus, a:active {
   font-weight: 200;
 }
 
-.stopContainer{
+.stop-container{
   border: 1px solid black;
+  padding: 20px;
+  font-weight: 150;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.transit-agency{
+  border-bottom: 1px solid black;
+  font-weight: 150;
+  text-align: center;
+}
+
+.stop-name{
+  padding-right: 20%;
+  border-bottom: 1px solid black;
+  font-weight: 150;
+}
+
+.route-destination-block {
+  text-align: center;
+  padding-top: 2em;
+}
+.time-block{
+  text-align: center;
+  font-size: 5em;
+}
+
+.order-selector {
+  margin-bottom: 2em;
 }

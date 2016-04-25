@@ -6,9 +6,7 @@ var Loading = require('../Loading.jsx');
 var Stops = React.createClass({
   getInitialState: function() {
     return {
-      stops: [
-
-      ],
+      stops: [],
       loaded: false
     }
   },
@@ -38,17 +36,21 @@ var Stops = React.createClass({
       }
       var stops = this.state.stops.map(function(stop){
         return (
-          <div className="stopContainer">
-            <div>{stop.agency_id}</div>
-            <div>{stop.stop_name}</div>
-            <span>{stop.route_short_name} {stop.destination}</span>
-            {/*<div>{stop.destination}</div>*/}
-            <div>{stop.departure_time}</div>
+          <div className="stop-container col-lg-12 col-md-12 col-sm-12">
+            <div className=" transit-agency col-lg-2 col-md-2 col-sm-2">{stop.agency_id}</div>
+            <div className=" stop-name col-lg-10 col-md-10 col-sm-10">{stop.stop_name}</div>
+            <div>
+              <div className="route-destination-block col-lg-4 col-md-4 col-sm-4">
+                <span>{stop.route_short_name} </span>
+                <span  className="fa fa-arrow-circle-right"> {stop.destination}</span>
+              </div>
+              <div className="time-block">{stop.departure_time}</div>
+            </div>
           </div>
         );
       });
       return (
-      <div>
+      <div className="col-lg-8 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 col-lg-offset-2">
         {stops}
       </div>
       );
