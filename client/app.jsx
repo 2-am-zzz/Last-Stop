@@ -4,10 +4,10 @@ require('./assets/laststop.css');
 require('./assets/main.css');
 require('./assets/bootstrap-social.css');
 
-var React = require('react');
+var React = window.React = require('react');
 var ReactDOM = require('react-dom');
-var App = require('./components/layout/App.jsx');
-var Main = require('./components/Main/Main.jsx');
+var Routes = require('./routes.jsx');
 
-ReactDOM.render(<App/>, document.getElementById('app'));
-ReactDOM.render(<Main/>, document.getElementById('transitSelector'));
+var mountNode = document.getElementById("app");
+
+ReactDOM.render(Routes, mountNode);
