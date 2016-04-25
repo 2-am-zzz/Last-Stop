@@ -32,6 +32,7 @@ class Stop
     end
     stops = Stop.where(service_id: service_id)
     p "*" * 50
+    p day
     p stops
     s = stops.geo_near(location).max_distance(0.005).to_a
     p "*" * 50
