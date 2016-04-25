@@ -1,9 +1,8 @@
-'use strict';
 var React = require('react');
 var _ = require('lodash');
 
-var Orderer = React.createClass({
-  OrderOptions: {
+var Agencies = React.createClass({
+  AgencyOptions: {
     "CalTrain": {
       "field": "created_at",
       "icon": "fa fa-train"
@@ -21,12 +20,16 @@ var Orderer = React.createClass({
   render: function() {
     return (
       <div className="row order-selector">
-        {_.map(this.OrderOptions, function(val, key) {
-          return <div className="order-option col-lg-4 col-md-4 col-xs-4 clickable" key={val.field} onClick={this.props.onSelect.bind(null, val.field)}><i className={val.icon}></i> {key}</div>
-        }.bind(this))}
+        {
+          _.map(this.AgencyOptions, function(val, key) {
+          return(
+             <div className="order-option col-lg-4 col-md-4 col-xs-4 clickable" key={val.field}><i className={val.icon}></i> {key}</div>
+           )
+        }.bind(this))
+      }
       </div>
     );
   }
 });
 
-module.exports = Orderer;
+module.exports = Agencies;
