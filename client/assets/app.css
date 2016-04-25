@@ -1,5 +1,5 @@
 body {
-  background: #FFFFFF; color: #777;
+  background: #F5F8FA; color: #777;
 }
 
 #app {
@@ -28,8 +28,4 @@ a, a:focus, a:active {
 
 .thin {
   font-weight: 200;
-}
-
-.stopContainer{
-  border: 1px solid black;
 }
