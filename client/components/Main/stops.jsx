@@ -1,30 +1,31 @@
-var EventEmitter = require('events').EventEmitter;
-var assign = require('object-assign');
-var request = require("superagent");
-
-var _stops = [];
-
-var position = navigator.geolocation.getCurrentPosition(function(position){
-  var lat = position.coords.latitude;
-  var lon = position.coords.longitude;
-request
-  .get('https://last-stop.herokuapp.com/apis/stops')
-  .query({lat: lat, lon: lon})
-  .end(function(err, res){
-  var data = JSON.parse(res.text);
-  console.log(data)
-    for(var i=0; i < data.length; i++) {
-      _stops.push(data[i]);
-    }
-  });
-});
-
-var AppStops = assign(EventEmitter.prototype, {
-  getStops: function() {
-    return _stops
-    console.log(_stops);
-  }
-});
-console.log("hello")
-console.log(_stops)
-module.exports = AppStops;
+// var EventEmitter = require('events').EventEmitter;
+// var assign = require('object-assign');
+// var request = require("superagent");
+//
+// var transitStop = [];
+//
+// var position = navigator.geolocation.getCurrentPosition(function(position){
+//   var lat = position.coords.latitude;
+//   var lon = position.coords.longitude;
+//   $.ajax({
+//     url: "https://last-stop-backup.herokuapp.com/apis/stops?lat="+lat+"&lon="+lon,
+//     type: "GET",
+//     async: false,
+//     success: function(res){
+//       for(var i = 0; i < res.length; i++ ) {
+//         transitStop.push(res[i]);
+//       };
+//     }
+//   });
+// });
+//
+// console.log(transitStop);
+//
+// var AppStops = assign(EventEmitter.prototype, {
+//   getStops: function() {
+//     if (transitStop > 0) {
+//       return transitStop;
+//     }
+//   }
+// });
+// module.exports = AppStops;

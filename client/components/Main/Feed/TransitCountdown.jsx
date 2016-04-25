@@ -24,7 +24,6 @@ var Countdown = React.createClass({
     },
 
     render: function() {
-      console.log(this.props)
       var timerStyle = {
         background: 'transparent',
         fontSize: '5',
@@ -33,7 +32,6 @@ var Countdown = React.createClass({
       }
       return (
         <div style={timerStyle} class='container-fluid'>
-
         </div>
       );
     }

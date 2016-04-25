@@ -29,3 +29,7 @@ a, a:focus, a:active {
 .thin {
   font-weight: 200;
 }
+
+.stopContainer{
+  border: 1px solid black;
+}
