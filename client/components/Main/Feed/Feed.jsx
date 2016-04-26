@@ -44,6 +44,12 @@ var Stops = React.createClass({
         if (date.diff(moment()) < 0) {
           date.add(24, 'hours');
         }
+        if (check > 12) {
+          departure_time = (check-12).toString() + departure_time.slice(2)
+          departure_time = departure_time.slice(0,5) + " PM";
+        } else {
+          departure_time = departure_time.slice(0,5) + " AM";
+        }
         return (
           <div className="stop-container col-sm-12 col-md-12 col-lg-12">
             <div className=" transit-agency col-sm-2 col-md-2 col-lg-2">{stop.agency_id}</div>
@@ -53,7 +59,7 @@ var Stops = React.createClass({
                 <div className="route-short col-sm-12 col-md-12 col-lg-12">{stop.route_short_name}</div>
                 <div className="fa fa-arrow-circle-right stop-dest col-sm-12 col-md-12 col-lg-12"> {stop.destination}</div>
               </div>
-              <div className="time-block col-sm-8 col-md-8 col-lg-8">{date.fromNow(true)}</div>
+              <div className="time-block col-sm-8 col-md-8 col-lg-8">{(date.diff(moment()) < 3600000 && date.diff(moment()) > 0) ? date.fromNow(true).replace("minute","min") : departure_time}</div>
             </div>
           </div>
         );
