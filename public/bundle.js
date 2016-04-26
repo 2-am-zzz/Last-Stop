@@ -26829,6 +26829,10 @@
 	    this.getInfo(this);
 	  },
 	
+	  // componentDidMount: function() {
+	  //   setInterval(forceUpdate(), 3000);
+	  // },
+	
 	  render: function render() {
 	    if (this.state.loaded !== false) {
 	      var feedStyle = {
@@ -26843,12 +26847,27 @@
 	        var date = moment(departure_time, "HH:mm:ss");
 	        if (date.diff(moment()) < 0) {
 	          date.add(24, 'hours');
+	          check -= 24;
 	        }
 	        if (check > 12) {
 	          departure_time = (check - 12).toString() + departure_time.slice(2);
-	          departure_time = departure_time.slice(0, 5) + " PM";
+	          departure_time = departure_time.slice(0, 5);
+	          if (departure_time.slice(-1) == ":") {
+	            departure_time = departure_time.slice(0, -1);
+	          }
+	          departure_time += " PM";
 	        } else {
-	          departure_time = departure_time.slice(0, 5) + " AM";
+	          departure_time = departure_time.slice(0, 5);
+	          if (departure_time.slice(-1) == ":") {
+	            departure_time = departure_time.slice(0, -1);
+	          }
+	          departure_time += " AM";
+	        }
+	        if (departure_time.slice(0, 2) === "00") {
+	          departure_time = departure_time.replace("00:", "12:");
+	        }
+	        if (departure_time.slice(0, 1) === "0") {
+	          departure_time = departure_time.slice(1);
 	        }
 	        return React.createElement(
 	          "div",
@@ -26858,12 +26877,12 @@
 	            { className: "header-block col-sm-12 col-md-12 col-lg-12" },
 	            React.createElement(
 	              "div",
-	              { className: "transit-agency col-sm-2 col-md-2 col-lg-2" },
+	              { className: "transit-agency col-sm-3 col-md-3 col-lg-3" },
 	              stop.agency_id
 	            ),
 	            React.createElement(
 	              "div",
-	              { className: "stop-name col-sm-10 col-md-10 col-lg-10" },
+	              { className: "stop-name col-sm-9 col-md-9 col-lg-9" },
 	              stop.stop_name
 	            )
 	          ),
@@ -26895,7 +26914,7 @@
 	      });
 	      return React.createElement(
 	        "div",
-	        { className: "col-sm-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1" },
+	        { className: "col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2" },
 	        stops
 	      );
 	    } else {
