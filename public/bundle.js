@@ -114,7 +114,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body {\n  background: #FFFFFF; color: #777;\n}\n\n#app {\n  position: relative; padding-left: 0; cursor: default;\n}\n\n#content {\n  max-width: 800px; margin: 4em auto; padding: 0 2em; line-height: 1.5em;\n}\n\n.pure-form input[type=text], button.pure-button {\n  padding-top: 0.6em; padding-bottom: 0.5em\n}\n\nbutton.pure-button {\n  border: 1px solid #0078E7; border-radius: 4px; margin-left: 5px;\n}\n\nul {\n  list-style: none; margin: 0; padding: 0;\n}\n\na, a:focus, a:active {\n  outline: none;\n}\n\n.thin {\n  font-weight: 200;\n}\n\n.stop-container {\n  border: 1px solid black;\n  padding: 20px;\n  font-weight: 150;\n  font-size: 2em;\n  text-align: center;\n  margin-bottom: 1em;\n}\n\n.transit-agency {\n  border-bottom: 1px solid black;\n  font-weight: 150;\n  text-align: center;\n}\n\n.stop-name {\n  border-bottom: 1px solid black;\n  font-weight: 150;\n}\n\n.route-short {\n  font-size: 5vmin;\n}\n\n.route-destination-block {\n  text-align: center;\n  padding: 2vmin 0 0 0;\n}\n\n.time-block {\n  text-align: center;\n  font-size: 10vmin;\n  border-left: 1px solid black;\n}\n\n", ""]);
+	exports.push([module.id, "body {\n  background: #FFFFFF; color: #777;\n}\n\n#app {\n  position: relative; padding-left: 0; cursor: default;\n}\n\n#content {\n  max-width: 800px; margin: 4em auto; padding: 0 2em; line-height: 1.5em;\n}\n\n.pure-form input[type=text], button.pure-button {\n  padding-top: 0.6em; padding-bottom: 0.5em\n}\n\nbutton.pure-button {\n  border: 1px solid #0078E7; border-radius: 4px; margin-left: 5px;\n}\n\nul {\n  list-style: none; margin: 0; padding: 0;\n}\n\na, a:focus, a:active {\n  outline: none;\n}\n\n.thin {\n  font-weight: 200;\n}\n\n.stop-container {\n  border: 1px solid black;\n  padding: 20px;\n  font-weight: 150;\n  font-size: 2em;\n  text-align: center;\n  margin-bottom: 1em;\n}\n\n.transit-agency {\n  border-bottom: 1px solid black;\n  font-weight: 150;\n  text-align: center;\n}\n\n.stop-name {\n  border-bottom: 1px solid black;\n  font-weight: 150;\n}\n\n.route-short {\n  font-size: 5vmin;\n}\n\n.route-destination-block {\n  text-align: center;\n  padding: 1vmin 0 0 0;\n}\n\n.time-block {\n  text-align: center;\n  font-size: 10vmin;\n}\n\n\n", ""]);
 	
 	// exports
 
@@ -26819,6 +26819,7 @@
 	      // fetch("https://last-stop-backup.herokuapp.com/apis/stops?lat=37.600377&lon=-122.3875")
 	      .then(function (res) {
 	        res.json().then(function (data) {
+	          // debugger;
 	          that.setState({ stops: data, loaded: true });
 	        });
 	      });
@@ -26849,26 +26850,54 @@
 	          date.add(24, 'hours');
 	          check -= 24;
 	        }
+	        function depTimeSlicer(dep) {
+	          departure_time = dep.slice(0, 5);
+	          if (departure_time.slice(-1) == ":") {
+	            departure_time = departure_time.slice(0, -1);
+	          }
+	          return departure_time;
+	        }
+	        function timerSwap(date, dep) {
+	          var timeTilChange = 3600000 * 1; // Time in Hours
+	          if (date.diff(moment()) < timeTilChange && date.diff(moment()) > 0) {
+	            return date.fromNow(true).replace("minute", "min");
+	          } else {
+	            return dep;
+	          }
+	        }
 	        if (check > 12) {
 	          departure_time = (check - 12).toString() + departure_time.slice(2);
-	          departure_time = departure_time.slice(0, 5);
-	          if (departure_time.slice(-1) == ":") {
-	            departure_time = departure_time.slice(0, -1);
-	          }
-	          departure_time += " PM";
+	          departure_time = depTimeSlicer(departure_time) + " PM";
 	        } else {
-	          departure_time = departure_time.slice(0, 5);
-	          if (departure_time.slice(-1) == ":") {
-	            departure_time = departure_time.slice(0, -1);
-	          }
-	          departure_time += " AM";
+	          departure_time = depTimeSlicer(departure_time) + " AM";
 	        }
 	        if (departure_time.slice(0, 2) === "00") {
 	          departure_time = departure_time.replace("00:", "12:");
-	        }
-	        if (departure_time.slice(0, 1) === "0") {
+	        } else if (departure_time.slice(0, 1) === "0") {
 	          departure_time = departure_time.slice(1);
 	        }
+	
+	        //old code above
+	
+	        // <div className="stop-container col-sm-12 col-md-12 col-lg-12">
+	
+	        // </div>
+	
+	        //   <div className="header-block col-sm-12 col-md-12 col-lg-12">
+	        //     <div className="transit-agency col-sm-4 col-md-4 col-lg-4">{stop.agency_id}</div>
+	        //     <div className="stop-name col-sm-8 col-md-8 col-lg-8">{stop.stop_name}</div>
+	        //   </div>
+	        //   <div className="info-block col-sm-12 col-md-12 col-lg-12">
+	        //     <div className="route-destination-block col-sm-4 col-md-4 col-lg-4">
+	        //       <div className="route-short col-sm-12 col-md-12 col-lg-12">{stop.route_short_name}</div>
+	        //       <div className="fa fa-arrow-circle-right stop-dest col-sm-12 col-md-12 col-lg-12"> {stop.destination}</div>
+	        //     </div>
+	        //     <div className="time-block col-sm-8 col-md-8 col-lg-8">{timerSwap(date, departure_time)}</div>
+	        //   </div>
+	
+	        //old code below
+	
+	        var stopLink = "http://www.google.com/maps/dir/My+location/" + stop.stop_name + "/data=!4m2!4m1!3e2";
 	        return React.createElement(
 	          "div",
 	          { className: "stop-container col-sm-12 col-md-12 col-lg-12" },
@@ -26883,7 +26912,11 @@
 	            React.createElement(
 	              "div",
 	              { className: "stop-name col-sm-8 col-md-8 col-lg-8" },
-	              stop.stop_name
+	              React.createElement(
+	                "a",
+	                { href: stopLink },
+	                stop.stop_name
+	              )
 	            )
 	          ),
 	          React.createElement(
@@ -26907,7 +26940,7 @@
 	            React.createElement(
 	              "div",
 	              { className: "time-block col-sm-8 col-md-8 col-lg-8" },
-	              date.diff(moment()) < 3600000 && date.diff(moment()) > 0 ? date.fromNow(true).replace("minute", "min") : departure_time
+	              timerSwap(date, departure_time)
 	            )
 	          )
 	        );
