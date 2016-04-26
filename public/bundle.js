@@ -26835,6 +26835,15 @@
 	        textAlign: 'right'
 	      };
 	      var stops = this.state.stops.map(function (stop) {
+	        var departure_time = stop.departure_time;
+	        var check = parseInt(departure_time.slice(0, 2));
+	        if (check >= 24) {
+	          departure_time = "0" + (check - 24).toString() + departure_time.slice(2);
+	        }
+	        var date = moment(departure_time, "HH:mm:ss");
+	        if (date.diff(moment()) < 0) {
+	          date.add(24, 'hours');
+	        }
 	        return React.createElement(
 	          "div",
 	          { className: "stop-container col-sm-12 col-md-12 col-lg-12" },
@@ -26869,7 +26878,7 @@
 	            React.createElement(
 	              "div",
 	              { className: "time-block col-sm-8 col-md-8 col-lg-8" },
-	              stop.departure_time
+	              date.fromNow(true)
 	            )
 	          )
 	        );
