@@ -19,7 +19,7 @@ var Stops = React.createClass({
       // fetch("https://last-stop-backup.herokuapp.com/apis/stops?lat=37.600377&lon=-122.3875")
         .then(function(res){
           res.json().then(function(data){
-              debugger;
+              // debugger;
               that.setState({stops: data, loaded:true});
           })
         });
@@ -101,21 +101,21 @@ var Stops = React.createClass({
 
         //old code below
 
-
+        var stopLink = "http://www.google.com/maps/dir/My+location/" + stop.stop_name + "/data=!4m2!4m1!3e2"
         return (
-          // <div className="stop-container col-sm-12 col-md-12 col-lg-12">
-          //   <div className="header-block col-sm-12 col-md-12 col-lg-12">
+          <div className="stop-container col-sm-12 col-md-12 col-lg-12">
+            <div className="header-block col-sm-12 col-md-12 col-lg-12">
               <div className="transit-agency col-sm-4 col-md-4 col-lg-4">{stop.agency_id}</div>
-          //     <div className="stop-name col-sm-8 col-md-8 col-lg-8">{stop.stop_name}</div>
-          //   </div>
-          //   <div className="info-block col-sm-12 col-md-12 col-lg-12">
-          //     <div className="route-destination-block col-sm-4 col-md-4 col-lg-4">
-          //       <div className="route-short col-sm-12 col-md-12 col-lg-12">{stop.route_short_name}</div>
-          //       <div className="fa fa-arrow-circle-right stop-dest col-sm-12 col-md-12 col-lg-12"> {stop.destination}</div>
-          //     </div>
-          //     <div className="time-block col-sm-8 col-md-8 col-lg-8">{timerSwap(date, departure_time)}</div>
-          //   </div>
-          // </div>
+              <div className="stop-name col-sm-8 col-md-8 col-lg-8"><a href={stopLink}>{stop.stop_name}</a></div>
+            </div>
+            <div className="info-block col-sm-12 col-md-12 col-lg-12">
+              <div className="route-destination-block col-sm-4 col-md-4 col-lg-4">
+                <div className="route-short col-sm-12 col-md-12 col-lg-12">{stop.route_short_name}</div>
+                <div className="fa fa-arrow-circle-right stop-dest col-sm-12 col-md-12 col-lg-12"> {stop.destination}</div>
+              </div>
+              <div className="time-block col-sm-8 col-md-8 col-lg-8">{timerSwap(date, departure_time)}</div>
+            </div>
+          </div>
         );
       });
       return (
