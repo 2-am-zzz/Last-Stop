@@ -29,6 +29,10 @@ var Stops = React.createClass({
     this.getInfo(this);
   },
 
+  // componentDidMount: function() {
+  //   setInterval(forceUpdate(), 3000);
+  // },
+
   render:function(){
     if (this.state.loaded !== false ) {
       var feedStyle = {
@@ -43,12 +47,27 @@ var Stops = React.createClass({
         var date = moment(departure_time, "HH:mm:ss")
         if (date.diff(moment()) < 0) {
           date.add(24, 'hours');
+          check -= 24
         }
         if (check > 12) {
-          departure_time = (check-12).toString() + departure_time.slice(2)
-          departure_time = departure_time.slice(0,5) + " PM";
+          departure_time = (check-12).toString() + departure_time.slice(2);
+          departure_time = departure_time.slice(0,5);
+          if (departure_time.slice(-1) == ":") {
+            departure_time = departure_time.slice(0,-1);
+          }
+          departure_time += " PM"
         } else {
-          departure_time = departure_time.slice(0,5) + " AM";
+          departure_time = departure_time.slice(0,5);
+          if (departure_time.slice(-1) == ":") {
+            departure_time = departure_time.slice(0,-1);
+          }
+          departure_time += " AM";
+        }
+        if (departure_time.slice(0,2) === "00") {
+          departure_time = departure_time.replace("00:", "12:");
+        }
+        if (departure_time.slice(0,1) === "0") {
+          departure_time = departure_time.slice(1);
         }
         return (
           <div className="stop-container col-sm-12 col-md-12 col-lg-12">
