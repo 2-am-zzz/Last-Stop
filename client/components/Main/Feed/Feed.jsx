@@ -55,6 +55,7 @@ var Stops = React.createClass({
       </div>
       );
     } else {
+      debugger;
       return <div><Loading/></div>
     }
   }
