@@ -72,8 +72,8 @@ var Stops = React.createClass({
         return (
           <div className="stop-container col-sm-12 col-md-12 col-lg-12">
             <div className="header-block col-sm-12 col-md-12 col-lg-12">
-              <div className="transit-agency col-sm-2 col-md-2 col-lg-2">{stop.agency_id}</div>
-              <div className="stop-name col-sm-10 col-md-10 col-lg-10">{stop.stop_name}</div>
+              <div className="transit-agency col-sm-3 col-md-3 col-lg-3">{stop.agency_id}</div>
+              <div className="stop-name col-sm-9 col-md-9 col-lg-9">{stop.stop_name}</div>
             </div>
             <div className="info-block col-sm-12 col-md-12 col-lg-12">
               <div className="route-destination-block col-sm-4 col-md-4 col-lg-4">
@@ -86,7 +86,7 @@ var Stops = React.createClass({
         );
       });
       return (
-      <div className="col-sm-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+      <div className="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
         {stops}
       </div>
       );
