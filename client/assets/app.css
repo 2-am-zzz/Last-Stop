@@ -46,28 +46,22 @@ a, a:focus, a:active {
 }
 
 .stop-name {
-  padding-right: 20%;
   border-bottom: 1px solid black;
   font-weight: 150;
 }
 
 .route-short {
   font-size: 5vmin;
-  border-right: 1px solid black;
-}
-
-.stop-dest {
-  border-right: 1px solid black;
 }
 
 .route-destination-block {
   text-align: center;
   padding: 2vmin 0 0 0;
-
 }
 
 .time-block {
   text-align: center;
   font-size: 10vmin;
+  border-left: 1px solid black;
 }
 
