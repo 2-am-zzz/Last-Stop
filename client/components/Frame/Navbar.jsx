@@ -8,7 +8,7 @@ var Navbar = React.createClass({
                 <i className="nav-icon fa fa-bus pull-left"></i>
               </a>
               <a href="#/main">
-                <span>Last Stop Checker</span>
+                <span>Last Stop</span>
               </a>
             </div>
 
