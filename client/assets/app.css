@@ -53,11 +53,6 @@ a, a:focus, a:active {
 
 .route-short {
   font-size: 5vmin;
-  border-right: 1px solid black;
-}
-
-.stop-dest {
-  border-right: 1px solid black;
 }
 
 .route-destination-block {
@@ -68,5 +63,6 @@ a, a:focus, a:active {
 .time-block {
   text-align: center;
   font-size: 10vmin;
+  border-left: 1px solid black;
 }
 
