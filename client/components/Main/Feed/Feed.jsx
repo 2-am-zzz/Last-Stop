@@ -59,7 +59,7 @@ var Stops = React.createClass({
                 <div className="route-short col-sm-12 col-md-12 col-lg-12">{stop.route_short_name}</div>
                 <div className="fa fa-arrow-circle-right stop-dest col-sm-12 col-md-12 col-lg-12"> {stop.destination}</div>
               </div>
-              <div className="time-block col-sm-8 col-md-8 col-lg-8">{(date.diff(moment()) < 3600000 && date.diff(moment()) > 0) ? date.fromNow(true) : departure_time}</div>
+              <div className="time-block col-sm-8 col-md-8 col-lg-8">{(date.diff(moment()) < 3600000 && date.diff(moment()) > 0) ? date.fromNow(true).replace("minute","min") : departure_time}</div>
             </div>
           </div>
         );
