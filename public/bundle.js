@@ -26844,6 +26844,12 @@
 	        if (date.diff(moment()) < 0) {
 	          date.add(24, 'hours');
 	        }
+	        if (check > 12) {
+	          departure_time = (check - 12).toString() + departure_time.slice(2);
+	          departure_time = departure_time.slice(0, 5) + " PM";
+	        } else {
+	          departure_time = departure_time.slice(0, 5) + " AM";
+	        }
 	        return React.createElement(
 	          "div",
 	          { className: "stop-container col-sm-12 col-md-12 col-lg-12" },
@@ -26878,7 +26884,7 @@
 	            React.createElement(
 	              "div",
 	              { className: "time-block col-sm-8 col-md-8 col-lg-8" },
-	              date.fromNow(true)
+	              date.diff(moment()) < 3600000 && date.diff(moment()) > 0 ? date.fromNow(true) : departure_time
 	            )
 	          )
 	        );
