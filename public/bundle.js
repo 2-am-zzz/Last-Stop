@@ -114,7 +114,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body {\n  background: #FFFFFF; color: #777;\n}\n\n#app {\n  position: relative; padding-left: 0; cursor: default;\n}\n\n#content {\n  max-width: 800px; margin: 4em auto; padding: 0 2em; line-height: 1.5em;\n}\n\n.pure-form input[type=text], button.pure-button {\n  padding-top: 0.6em; padding-bottom: 0.5em\n}\n\nbutton.pure-button {\n  border: 1px solid #0078E7; border-radius: 4px; margin-left: 5px;\n}\n\nul {\n  list-style: none; margin: 0; padding: 0;\n}\n\na, a:focus, a:active {\n  outline: none;\n}\n\n.thin {\n  font-weight: 200;\n}\n\n.stop-container {\n  border: 1px solid black;\n  padding: 20px;\n  font-weight: 150;\n  text-align: center;\n  margin-bottom: 1em;\n}\n\n.transit-agency {\n  border-bottom: 1px solid black;\n  font-weight: 150;\n  text-align: center;\n}\n\n.stop-name {\n  padding-right: 20%;\n  border-bottom: 1px solid black;\n  font-weight: 150;\n}\n\n.route-short {\n  font-size: 1.5em\n}\n\n.route-destination-block {\n  text-align: center;\n  padding: 2em 0 0 0;\n}\n\n.time-block {\n  text-align: center;\n  font-size: 5em;\n}\n\n.order-selector {\n  margin-bottom: 2em;\n}\n", ""]);
+	exports.push([module.id, "body {\n  background: #FFFFFF; color: #777;\n}\n\n#app {\n  position: relative; padding-left: 0; cursor: default;\n}\n\n#content {\n  max-width: 800px; margin: 4em auto; padding: 0 2em; line-height: 1.5em;\n}\n\n.pure-form input[type=text], button.pure-button {\n  padding-top: 0.6em; padding-bottom: 0.5em\n}\n\nbutton.pure-button {\n  border: 1px solid #0078E7; border-radius: 4px; margin-left: 5px;\n}\n\nul {\n  list-style: none; margin: 0; padding: 0;\n}\n\na, a:focus, a:active {\n  outline: none;\n}\n\n.thin {\n  font-weight: 200;\n}\n\n.stop-container {\n  border: 1px solid black;\n  padding: 20px;\n  font-weight: 150;\n  font-size: 2em;\n  text-align: center;\n  margin-bottom: 1em;\n}\n\n.transit-agency {\n  border-bottom: 1px solid black;\n  font-weight: 150;\n  text-align: center;\n}\n\n.stop-name {\n  padding-right: 20%;\n  border-bottom: 1px solid black;\n  font-weight: 150;\n}\n\n.route-short {\n  font-size: 2.5em;\n  border-right: 1px solid black;\n}\n\n.stop-dest {\n  border-right: 1px solid black;\n}\n\n.route-destination-block {\n  text-align: center;\n  padding: 0.75em 0 0 0;\n}\n\n.time-block {\n  text-align: center;\n  font-size: 4.5em;\n}\n\n", ""]);
 	
 	// exports
 
@@ -566,7 +566,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body {\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n}\n\n.nav {\n  margin-bottom: 0;\n  background-color: #FFF;\n  color: #1ec7c7;\n  text-align: center;\n  font-size: 35px;\n  padding: 10px;\n  letter-spacing: -1px;\n  border-bottom: 3px solid #22DDDE;\n}\n\n.nav a {\n  text-decoration: none;\n  color: inherit;\n}\n\n.nav .dropdown ul {\n  font-size: 20px;\n}\n\n.nav-icon {\n  padding-top: 10px;\n  padding-right: 10px;\n  padding-left: 10px;\n}\n\n.order-selector {\n  border-bottom: 2px solid #7AF5F5;\n  /*margin: 0px 20px;*/\n  background-color: #fff;\n  font-size: 15px;\n  margin-left: 0;\n  margin-right: 0;\n}\n\n.clickable {\n  cursor: pointer;\n  cursor: hand;\n}\n\n.order-option {\n  text-align: center;\n\n  padding-top: 10px;\n  padding-bottom: 10px;\n  border-left: 1px solid #7AF5F5;\n  border-right: 1px solid #7AF5F5;\n}\n\n.order-option:first-of-type {\n  border-right: none;\n  border-left: none;\n}\n\n.order-option:last-of-type {\n  border-left: none;\n  border-right: none;\n}\n\n.login {\n  font-size: 3em;\n  font-weight: 300;\n  padding: 100px;\n}\n\n.content {\n  padding: 0px;\n}\n\n.loading {\n  padding-top: 15px;\n  padding-bottom: 15px;\n}\n\n.main {\n  padding-bottom: 66px;\n}\n\n.add-button {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  height: 30px;\n  background-color: #fff;\n  text-align: center;\n  padding-top: 10px;\n  padding-bottom: 55px;\n  color: #1ec7c7;\n  font-size: 30px;\n  border-top: 2px solid #7AF5F5;\n}\n\n.add-button .icon {\n  margin-top: -5px;\n}\n\n.poll-list {\n  height: 100%;\n}\n\n.poll {\n  background-color: #fff;\n  /*margin-bottom: 10px;*/\n  padding: 20px 20px;\n  border-bottom: 1px #f0f0f4 solid;\n  display: flex;\n  justify-content: space-between;\n}\n\n.poll-left {\n  display: flex;\n  flex-direction: row;\n}\n\n.poll-right {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\n.poll-index {\n  font-size: 40px;\n  color: #f2f2f2;\n  margin-right: 20px;\n}\n\n.poll-info {\n  font-size: 15px;\n  color: #CFD0C2;\n}\n\n.poll .question {\n  padding-top: 3px;\n  font-size: 18px;\n}\n\n.poll-votes-label {\n  text-align: center;\n  color: #CFD0C2;\n}\n\n.poll-votes-value {\n  font-size: 3em;\n  font-weight: 300;\n  color: #1ec7c7;\n  margin-top: -8px;\n}\n\n.poll-answer {\n  margin-top: 10px;\n}\n\n.answer-options {\n  margin-top: 5px;\n  display: inline;\n}\n\n.answer-options ul {\n  display: inline;\n  list-style: none;\n  margin-bottom: 0;\n  padding-left: 0px;\n  height: 100%;\n}\n\n.option-result {\n  display: inline-block;\n  height: 20px;\n  margin-right: 10px;\n  border: 1px #1ec7c7 solid;\n  height: 100%;\n  color: #242621;\n  margin-bottom: 2px;\n}\n\n.option-result a {\n  height: 100%;\n}\n\n.input-field {\n  font-weight: 300;\n  padding: 30px 50px;\n  display: flex;\n  flex-direction: column;\n}\n\n.input-field .title {\n  font-size: 35px;\n  color: #1ec7c7;\n}\n\n.input-field .btn {\n  background-color: #1ec7c7;\n  border-color: #ccc;\n  color: #fff;\n}\n\n.input-field ol li span {\n  color: #1ec7c7;\n  margin: 2px;\n  font-size: 25px;\n}\n\n.input-field ol li a {\n  color: #1ec7c7;\n}\n\n.add-option {\n  color: #fff;\n}\n\n.voted {\n  /*background-color: #DEDEDE;*/\n}\n", ""]);
+	exports.push([module.id, "body {\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n}\n\n.nav {\n  margin-bottom: 0;\n  background-color: #FFF;\n  color: #1ec7c7;\n  text-align: center;\n  font-size: 5em;\n  padding: 10px;\n  padding-right: 10%;\n  letter-spacing: -1px;\n  border-bottom: 3px solid #22DDDE;\n}\n\n.nav a {\n  text-decoration: none;\n  color: inherit;\n}\n\n.nav .dropdown ul {\n  font-size: 20px;\n}\n\n.nav-icon {\n  padding-top: 10px;\n  padding-right: 10px;\n  padding-left: 10px;\n}\n\n.order-selector {\n  border-bottom: 2px solid #7AF5F5;\n  background-color: #fff;\n  font-size: 2em;\n  margin: 0 0 1em 0;\n}\n\n.clickable {\n  cursor: pointer;\n  cursor: hand;\n}\n\n.order-option {\n  text-align: center;\n\n  padding-top: 10px;\n  padding-bottom: 10px;\n  border-left: 1px solid #7AF5F5;\n  border-right: 1px solid #7AF5F5;\n}\n\n.order-option:first-of-type {\n  border-right: none;\n  border-left: none;\n}\n\n.order-option:last-of-type {\n  border-left: none;\n  border-right: none;\n}\n\n.login {\n  font-size: 3em;\n  font-weight: 300;\n  padding: 100px;\n}\n\n.content {\n  padding: 0px;\n}\n\n.loading {\n  padding-top: 15px;\n  padding-bottom: 15px;\n}\n\n.main {\n  padding-bottom: 1em;\n}\n\n.add-button {\n  position: fixed;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  height: 30px;\n  background-color: #fff;\n  text-align: center;\n  padding-top: 10px;\n  padding-bottom: 55px;\n  color: #1ec7c7;\n  font-size: 30px;\n  border-top: 2px solid #7AF5F5;\n}\n\n.add-button .icon {\n  margin-top: -5px;\n}\n\n.poll-list {\n  height: 100%;\n}\n\n.poll {\n  background-color: #fff;\n  /*margin-bottom: 10px;*/\n  padding: 20px 20px;\n  border-bottom: 1px #f0f0f4 solid;\n  display: flex;\n  justify-content: space-between;\n}\n\n.poll-left {\n  display: flex;\n  flex-direction: row;\n}\n\n.poll-right {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\n.poll-index {\n  font-size: 40px;\n  color: #f2f2f2;\n  margin-right: 20px;\n}\n\n.poll-info {\n  font-size: 15px;\n  color: #CFD0C2;\n}\n\n.poll .question {\n  padding-top: 3px;\n  font-size: 18px;\n}\n\n.poll-votes-label {\n  text-align: center;\n  color: #CFD0C2;\n}\n\n.poll-votes-value {\n  font-size: 3em;\n  font-weight: 300;\n  color: #1ec7c7;\n  margin-top: -8px;\n}\n\n.poll-answer {\n  margin-top: 10px;\n}\n\n.answer-options {\n  margin-top: 5px;\n  display: inline;\n}\n\n.answer-options ul {\n  display: inline;\n  list-style: none;\n  margin-bottom: 0;\n  padding-left: 0px;\n  height: 100%;\n}\n\n.option-result {\n  display: inline-block;\n  height: 20px;\n  margin-right: 10px;\n  border: 1px #1ec7c7 solid;\n  height: 100%;\n  color: #242621;\n  margin-bottom: 2px;\n}\n\n.option-result a {\n  height: 100%;\n}\n\n.input-field {\n  font-weight: 300;\n  padding: 30px 50px;\n  display: flex;\n  flex-direction: column;\n}\n\n.input-field .title {\n  font-size: 35px;\n  color: #1ec7c7;\n}\n\n.input-field .btn {\n  background-color: #1ec7c7;\n  border-color: #ccc;\n  color: #fff;\n}\n\n.input-field ol li span {\n  color: #1ec7c7;\n  margin: 2px;\n  font-size: 25px;\n}\n\n.input-field ol li a {\n  color: #1ec7c7;\n}\n\n.add-option {\n  color: #fff;\n}\n\n.voted {\n  /*background-color: #DEDEDE;*/\n}\n", ""]);
 	
 	// exports
 
@@ -26835,6 +26835,21 @@
 	        textAlign: 'right'
 	      };
 	      var stops = this.state.stops.map(function (stop) {
+	        var departure_time = stop.departure_time;
+	        var check = parseInt(departure_time.slice(0, 2));
+	        if (check >= 24) {
+	          departure_time = "0" + (check - 24).toString() + departure_time.slice(2);
+	        }
+	        var date = moment(departure_time, "HH:mm:ss");
+	        if (date.diff(moment()) < 0) {
+	          date.add(24, 'hours');
+	        }
+	        if (check > 12) {
+	          departure_time = (check - 12).toString() + departure_time.slice(2);
+	          departure_time = departure_time.slice(0, 5) + " PM";
+	        } else {
+	          departure_time = departure_time.slice(0, 5) + " AM";
+	        }
 	        return React.createElement(
 	          "div",
 	          { className: "stop-container col-sm-12 col-md-12 col-lg-12" },
@@ -26856,12 +26871,12 @@
 	              { className: "route-destination-block col-sm-4 col-md-4 col-lg-4" },
 	              React.createElement(
 	                "div",
-	                { className: "route-short" },
+	                { className: "route-short col-sm-12 col-md-12 col-lg-12" },
 	                stop.route_short_name
 	              ),
 	              React.createElement(
 	                "div",
-	                { className: "fa fa-arrow-circle-right" },
+	                { className: "fa fa-arrow-circle-right stop-dest col-sm-12 col-md-12 col-lg-12" },
 	                " ",
 	                stop.destination
 	              )
@@ -26869,14 +26884,14 @@
 	            React.createElement(
 	              "div",
 	              { className: "time-block col-sm-8 col-md-8 col-lg-8" },
-	              stop.departure_time
+	              date.diff(moment()) < 3600000 && date.diff(moment()) > 0 ? date.fromNow(true).replace("minute", "min") : departure_time
 	            )
 	          )
 	        );
 	      });
 	      return React.createElement(
 	        "div",
-	        { className: "col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3" },
+	        { className: "col-sm-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1" },
 	        stops
 	      );
 	    } else {
