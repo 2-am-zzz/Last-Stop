@@ -5,19 +5,19 @@ var _ = require('lodash');
 var Agencies = React.createClass({
   AgencyOptions: {
     "AC Transit": {
-      "field": "created_at",
+      "field": "ACT",
       "icon": "fa fa-bus"
     },
     "Bart": {
-      "field": "votes",
+      "field": "Bart",
       "icon": "fa fa-subway"
     },
     "Muni": {
-      "field": "freshness",
+      "field": "Muni",
       "icon": "fa fa-bus"
     },
     "Cal Train": {
-      "field": "shot shit",
+      "field": "CAT",
       "icon": "fa fa-train"
     }
   },

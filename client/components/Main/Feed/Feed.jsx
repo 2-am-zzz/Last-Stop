@@ -1,6 +1,6 @@
 var React = require("react");
 var request = require("superagent");
-// var AppStops = require("../stops.jsx");
+var VirtualScroll = require('react-virtualized');
 var Loading = require('../Loading.jsx');
 
 var Stops = React.createClass({
