@@ -52,9 +52,11 @@ var Stops = React.createClass({
         }
         return (
           <div className="stop-container col-sm-12 col-md-12 col-lg-12">
-            <div className=" transit-agency col-sm-2 col-md-2 col-lg-2">{stop.agency_id}</div>
-            <div className=" stop-name col-sm-10 col-md-10 col-lg-10">{stop.stop_name}</div>
-            <div>
+            <div className="header-block col-sm-12 col-md-12 col-lg-12">
+              <div className="transit-agency col-sm-2 col-md-2 col-lg-2">{stop.agency_id}</div>
+              <div className="stop-name col-sm-10 col-md-10 col-lg-10">{stop.stop_name}</div>
+            </div>
+            <div className="info-block col-sm-12 col-md-12 col-lg-12">
               <div className="route-destination-block col-sm-4 col-md-4 col-lg-4">
                 <div className="route-short col-sm-12 col-md-12 col-lg-12">{stop.route_short_name}</div>
                 <div className="fa fa-arrow-circle-right stop-dest col-sm-12 col-md-12 col-lg-12"> {stop.destination}</div>
