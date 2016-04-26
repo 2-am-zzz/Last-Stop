@@ -26855,17 +26855,21 @@
 	          { className: "stop-container col-sm-12 col-md-12 col-lg-12" },
 	          React.createElement(
 	            "div",
-	            { className: " transit-agency col-sm-2 col-md-2 col-lg-2" },
-	            stop.agency_id
+	            { className: "header-block col-sm-12 col-md-12 col-lg-12" },
+	            React.createElement(
+	              "div",
+	              { className: "transit-agency col-sm-2 col-md-2 col-lg-2" },
+	              stop.agency_id
+	            ),
+	            React.createElement(
+	              "div",
+	              { className: "stop-name col-sm-10 col-md-10 col-lg-10" },
+	              stop.stop_name
+	            )
 	          ),
 	          React.createElement(
 	            "div",
-	            { className: " stop-name col-sm-10 col-md-10 col-lg-10" },
-	            stop.stop_name
-	          ),
-	          React.createElement(
-	            "div",
-	            null,
+	            { className: "info-block col-sm-12 col-md-12 col-lg-12" },
 	            React.createElement(
 	              "div",
 	              { className: "route-destination-block col-sm-4 col-md-4 col-lg-4" },
