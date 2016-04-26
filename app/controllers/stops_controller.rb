@@ -11,4 +11,3 @@ class StopsController < ApplicationController
     render text: "Uxl2x_f4qyn2JB75Mq4X4FapZ-ko7ya2ZdAuFxp82kU.02kUenbQ-XCk5uAvXAgeYKso_2iocaSC027DGe1VxJo"
   end
 end
-end
