@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   scope '/apis' do
     resources :stops, except: [:new, :edit]
   end
+
+  get '/.well-known/acme-challenge/:id' => 'stops#letsencrypt'
 end
