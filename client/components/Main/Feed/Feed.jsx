@@ -50,8 +50,8 @@ var Stops = React.createClass({
             <div className=" stop-name col-sm-10 col-md-10 col-lg-10">{stop.stop_name}</div>
             <div>
               <div className="route-destination-block col-sm-4 col-md-4 col-lg-4">
-                <div className="route-short">{stop.route_short_name}</div>
-                <div className="fa fa-arrow-circle-right"> {stop.destination}</div>
+                <div className="route-short col-sm-12 col-md-12 col-lg-12">{stop.route_short_name}</div>
+                <div className="fa fa-arrow-circle-right stop-dest col-sm-12 col-md-12 col-lg-12"> {stop.destination}</div>
               </div>
               <div className="time-block col-sm-8 col-md-8 col-lg-8">{date.fromNow(true)}</div>
             </div>
@@ -59,7 +59,7 @@ var Stops = React.createClass({
         );
       });
       return (
-      <div className="col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
+      <div className="col-sm-12 col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
         {stops}
       </div>
       );
