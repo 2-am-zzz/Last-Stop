@@ -36,21 +36,21 @@ var Stops = React.createClass({
       }
       var stops = this.state.stops.map(function(stop){
         return (
-          <div className="stop-container col-lg-12 col-md-12 col-sm-12">
-            <div className=" transit-agency col-lg-2 col-md-2 col-sm-2">{stop.agency_id}</div>
-            <div className=" stop-name col-lg-10 col-md-10 col-sm-10">{stop.stop_name}</div>
+          <div className="stop-container col-sm-12 col-md-12 col-lg-12">
+            <div className=" transit-agency col-sm-2 col-md-2 col-lg-2">{stop.agency_id}</div>
+            <div className=" stop-name col-sm-10 col-md-10 col-lg-10">{stop.stop_name}</div>
             <div>
-              <div className="route-destination-block col-lg-4 col-md-4 col-sm-4">
-                <span>{stop.route_short_name} </span>
-                <span  className="fa fa-arrow-circle-right"> {stop.destination}</span>
+              <div className="route-destination-block col-sm-4 col-md-4 col-lg-4">
+                <div className="route-short">{stop.route_short_name}</div>
+                <div className="fa fa-arrow-circle-right"> {stop.destination}</div>
               </div>
-              <div className="time-block">{stop.departure_time}</div>
+              <div className="time-block col-sm-8 col-md-8 col-lg-8">{stop.departure_time}</div>
             </div>
           </div>
         );
       });
       return (
-      <div className="col-lg-8 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 col-lg-offset-2">
+      <div className="col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3">
         {stops}
       </div>
       );

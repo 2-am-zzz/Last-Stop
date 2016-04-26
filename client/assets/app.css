@@ -30,7 +30,7 @@ a, a:focus, a:active {
   font-weight: 200;
 }
 
-.stop-container{
+.stop-container {
   border: 1px solid black;
   padding: 20px;
   font-weight: 150;
@@ -38,23 +38,28 @@ a, a:focus, a:active {
   margin-bottom: 1em;
 }
 
-.transit-agency{
+.transit-agency {
   border-bottom: 1px solid black;
   font-weight: 150;
   text-align: center;
 }
 
-.stop-name{
+.stop-name {
   padding-right: 20%;
   border-bottom: 1px solid black;
   font-weight: 150;
 }
 
+.route-short {
+  font-size: 1.5em
+}
+
 .route-destination-block {
   text-align: center;
-  padding-top: 2em;
+  padding: 2em 0 0 0;
 }
-.time-block{
+
+.time-block {
   text-align: center;
   font-size: 5em;
 }

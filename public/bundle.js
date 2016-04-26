@@ -114,7 +114,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body {\n  background: #FFFFFF; color: #777;\n}\n\n#app {\n  position: relative; padding-left: 0; cursor: default;\n}\n\n#content {\n  max-width: 800px; margin: 4em auto; padding: 0 2em; line-height: 1.5em;\n}\n\n.pure-form input[type=text], button.pure-button {\n  padding-top: 0.6em; padding-bottom: 0.5em\n}\n\nbutton.pure-button {\n  border: 1px solid #0078E7; border-radius: 4px; margin-left: 5px;\n}\n\nul {\n  list-style: none; margin: 0; padding: 0;\n}\n\na, a:focus, a:active {\n  outline: none;\n}\n\n.thin {\n  font-weight: 200;\n}\n\n.stop-container{\n  border: 1px solid black;\n  padding: 20px;\n  font-weight: 150;\n  text-align: center;\n  margin-bottom: 1em;\n}\n\n.transit-agency{\n  border-bottom: 1px solid black;\n  font-weight: 150;\n  text-align: center;\n}\n\n.stop-name{\n  padding-right: 20%;\n  border-bottom: 1px solid black;\n  font-weight: 150;\n}\n\n.route-destination-block {\n  text-align: center;\n  padding-top: 2em;\n}\n.time-block{\n  text-align: center;\n  font-size: 5em;\n}\n\n.order-selector {\n  margin-bottom: 2em;\n}\n", ""]);
+	exports.push([module.id, "body {\n  background: #FFFFFF; color: #777;\n}\n\n#app {\n  position: relative; padding-left: 0; cursor: default;\n}\n\n#content {\n  max-width: 800px; margin: 4em auto; padding: 0 2em; line-height: 1.5em;\n}\n\n.pure-form input[type=text], button.pure-button {\n  padding-top: 0.6em; padding-bottom: 0.5em\n}\n\nbutton.pure-button {\n  border: 1px solid #0078E7; border-radius: 4px; margin-left: 5px;\n}\n\nul {\n  list-style: none; margin: 0; padding: 0;\n}\n\na, a:focus, a:active {\n  outline: none;\n}\n\n.thin {\n  font-weight: 200;\n}\n\n.stop-container {\n  border: 1px solid black;\n  padding: 20px;\n  font-weight: 150;\n  text-align: center;\n  margin-bottom: 1em;\n}\n\n.transit-agency {\n  border-bottom: 1px solid black;\n  font-weight: 150;\n  text-align: center;\n}\n\n.stop-name {\n  padding-right: 20%;\n  border-bottom: 1px solid black;\n  font-weight: 150;\n}\n\n.route-short {\n  font-size: 1.5em\n}\n\n.route-destination-block {\n  text-align: center;\n  padding: 2em 0 0 0;\n}\n\n.time-block {\n  text-align: center;\n  font-size: 5em;\n}\n\n.order-selector {\n  margin-bottom: 2em;\n}\n", ""]);
 	
 	// exports
 
@@ -26699,7 +26699,7 @@
 	  render: function render() {
 	    return React.createElement(
 	      "div",
-	      { className: "container" },
+	      { className: "container col-sm-12 col-md-12 col-lg-12" },
 	      React.createElement(
 	        "div",
 	        { className: "row" },
@@ -26710,7 +26710,7 @@
 	        { className: "row" },
 	        React.createElement(
 	          "div",
-	          { className: "content col-lg-10 col-lg-offset-1" },
+	          { className: "content col-sm-12 col-md-12 col-lg-12" },
 	          this.props.children
 	        )
 	      )
@@ -26837,15 +26837,15 @@
 	      var stops = this.state.stops.map(function (stop) {
 	        return React.createElement(
 	          "div",
-	          { className: "stop-container col-lg-12 col-md-12 col-sm-12" },
+	          { className: "stop-container col-sm-12 col-md-12 col-lg-12" },
 	          React.createElement(
 	            "div",
-	            { className: " transit-agency col-lg-2 col-md-2 col-sm-2" },
+	            { className: " transit-agency col-sm-2 col-md-2 col-lg-2" },
 	            stop.agency_id
 	          ),
 	          React.createElement(
 	            "div",
-	            { className: " stop-name col-lg-10 col-md-10 col-sm-10" },
+	            { className: " stop-name col-sm-10 col-md-10 col-lg-10" },
 	            stop.stop_name
 	          ),
 	          React.createElement(
@@ -26853,15 +26853,14 @@
 	            null,
 	            React.createElement(
 	              "div",
-	              { className: "route-destination-block col-lg-4 col-md-4 col-sm-4" },
+	              { className: "route-destination-block col-sm-4 col-md-4 col-lg-4" },
 	              React.createElement(
-	                "span",
-	                null,
-	                stop.route_short_name,
-	                " "
+	                "div",
+	                { className: "route-short" },
+	                stop.route_short_name
 	              ),
 	              React.createElement(
-	                "span",
+	                "div",
 	                { className: "fa fa-arrow-circle-right" },
 	                " ",
 	                stop.destination
@@ -26869,7 +26868,7 @@
 	            ),
 	            React.createElement(
 	              "div",
-	              { className: "time-block" },
+	              { className: "time-block col-sm-8 col-md-8 col-lg-8" },
 	              stop.departure_time
 	            )
 	          )
@@ -26877,7 +26876,7 @@
 	      });
 	      return React.createElement(
 	        "div",
-	        { className: "col-lg-8 col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 col-lg-offset-2" },
+	        { className: "col-sm-12 col-md-6 col-lg-6 col-md-offset-3 col-lg-offset-3" },
 	        stops
 	      );
 	    } else {
