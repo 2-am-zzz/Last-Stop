@@ -35,6 +35,15 @@ var Stops = React.createClass({
         textAlign:'right'
       }
       var stops = this.state.stops.map(function(stop){
+        var departure_time = stop.departure_time
+        var check = parseInt(departure_time.slice(0,2))
+        if (check >= 24) {
+          departure_time = "0" + (check-24).toString() + departure_time.slice(2);
+        }
+        var date = moment(departure_time, "HH:mm:ss")
+        if (date.diff(moment()) < 0) {
+          date.add(24, 'hours');
+        }
         return (
           <div className="stop-container col-sm-12 col-md-12 col-lg-12">
             <div className=" transit-agency col-sm-2 col-md-2 col-lg-2">{stop.agency_id}</div>
@@ -44,7 +53,7 @@ var Stops = React.createClass({
                 <div className="route-short">{stop.route_short_name}</div>
                 <div className="fa fa-arrow-circle-right"> {stop.destination}</div>
               </div>
-              <div className="time-block col-sm-8 col-md-8 col-lg-8">{stop.departure_time}</div>
+              <div className="time-block col-sm-8 col-md-8 col-lg-8">{date.fromNow(true)}</div>
             </div>
           </div>
         );
