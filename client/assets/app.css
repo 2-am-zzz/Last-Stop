@@ -46,7 +46,6 @@ a, a:focus, a:active {
 }
 
 .stop-name {
-  padding-right: 20%;
   border-bottom: 1px solid black;
   font-weight: 150;
 }
