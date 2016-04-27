@@ -27,6 +27,7 @@ var Stops = React.createClass({
 
   componentWillMount: function () {
     this.getInfo(this);
+    //comment
   },
 
   // componentDidMount: function() {
@@ -59,7 +60,7 @@ var Stops = React.createClass({
         function timerSwap(date, dep){
           var timeTilChange = (3600000) * 1 // Time in Hours
           if (date.diff(moment()) < timeTilChange && date.diff(moment()) > 0) {
-             return date.fromNow(true).replace("minute","min");
+             return date.fromNow(true).replace("minute","min"); 
           } else {
             return dep;
           }
