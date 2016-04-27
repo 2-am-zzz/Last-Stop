@@ -1,6 +1,18 @@
 ## Last-Stop
 A DevBootcamp final project focusing on alerting users of the time of the last bus/train/BART to arrive.
 
+### Authored by:
+- Cyrus Vattes (@cyvattes)
+- Thomas Huang (@tmashuang)
+- Kevin Serrano (@Zanibas)
+- Ronu Ghoshal (@RonuGhoshal)
+
+### Special Thanks to:
+- Nathan Park (@nathanmpark)
+- Amir Fayek (@afayek1)
+
+- DBC Phase 3, 2016 Sea Lions
+
 ## MVP
 
 - A user can see the Front page, which has multiple sections for each transit agency with stops nearby.
@@ -10,42 +22,44 @@ A DevBootcamp final project focusing on alerting users of the time of the last b
 
 ## Tech Stack
 - Rails API backend
-- Mongoid MongoDB driver.
+- Mongoid MongoDB driver
 - mLab for our database solution and hosting MongoDB
 - Heroku for hosting
 - GoDaddy for our domain name
 - React Frontend
 - Bootstrap CSS Framework
 - SFMTA, AC Trans, BART, and Caltrain Datasets
+- Minitest
 
 ## Team Dynamics
 
 ### Schedule
-- 9am - 9pm (Flexible)
+9am - 9pm (very flexible)
 
 ### Lunch
-- Least: 1 hours
-- Most: 1.5 hours
+1hr < t < 1.5hrs
 
 ### StandUps
 1. 9am
 2. 2pm
-3. 6pm <- 360 Feedback
+3. 6pm
+
+#### Questions Asked
   * How are they doing?
   * What did they do from yesterday?
   * What are they working on today?
-  * Current roadblocks.
-  * ASK feedback.
+  * Current roadblocks
+  * ASK feedback, 360 feedback
 
 ### Slice/Pairing
-- 2 Pairs of 2
+- Two Pairs of Two
 - Pair that created PR does not merge their own PR.
 - Pair swap for merge to fix and solve merge conflicts.
 - Branch for each feature.
 
 ### Database Update Procedure
-- mongoimport -h <host> -d last-stop -c <collection> -u <user> -p <password> --file <input .csv file> --type csv --headerline
-- mongo <host> -u <dbuser> -p <dbpassword>
-- db.stops.ensureIndex({loc:"2d"});
-- db.stops.find().batchSize(20).forEach( function(r) { r.loc = [r.stop_lat, r.stop_lon]; db.stops.save(r); });
+    mongoimport -h <host> -d last-stop -c <collection> -u <user> -p <password> --file <input .csv file> --type csv --headerline
+    mongo <host> -u <dbuser> -p <dbpassword>
+    db.stops.ensureIndex({loc:"2d"});
+    db.stops.find().batchSize(20).forEach( function(r) { r.loc = [r.stop_lat, r.stop_lon]; db.stops.save(r); });
 
