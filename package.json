@@ -30,6 +30,8 @@
     "jsuri": "*",
     "jsx-loader": "^0.13.2",
     "lodash": "^4.11.1",
+    "moment": "^2.13.0",
+    "moment-timezone": "^0.5.3",
     "object-assign": "^4.0.1",
     "react": "*",
     "react-addons-shallow-compare": "^15.0.1",

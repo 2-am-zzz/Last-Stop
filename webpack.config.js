@@ -8,6 +8,7 @@ module.exports = {
     loaders: [
         { test: /\.jsx$/, exclude: /assets/, loader: 'jsx-loader' },
         { test: /\.css$/, include: /assets/,loader: 'style-loader!css-loader'},
+        {include: /\.json$/, loader: "json-loader"},
         {
           exclude: [/node_modules/, /bower_components/, /assets/],
           loader: 'babel',
@@ -17,7 +18,7 @@ module.exports = {
       }]
   },
   resolve: {
-    extensions: ['', ".js",".jsx"]
+    extensions: ['', ".js",".jsx", ".json"]
   },
   plugins: []
 };

@@ -26,7 +26,7 @@ var Agencies = React.createClass({
     return (
       <div className="row order-selector">
         {_.map(this.AgencyOptions, function(val, key) {
-          return <div className="order-option col-lg-3 col-md-3 col-xs-3 clickable" key={val.field}><i className={val.icon}></i> {key}</div>
+          return <div className="order-option col-lg-3 col-md-3 col-xs-3 clickable" key={val.field} ><i className={val.icon}></i> {key}</div>
         }.bind(this))}
       </div>
     );
