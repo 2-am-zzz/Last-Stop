@@ -13,9 +13,9 @@ var Stops = React.createClass({
 
   getInfo: function(that) {
     var position = navigator.geolocation.getCurrentPosition(function(position){
-      var lat = position.coords.latitude;
-      var lon = position.coords.longitude;
-      fetch("https://last-stop-backup.herokuapp.com/apis/stops?lat="+lat+"&lon="+lon)
+      window.lat = position.coords.latitude;
+      window.lon = position.coords.longitude;
+      fetch("https://last-stop-backup.herokuapp.com/apis/stops?lat="+window.lat+"&lon="+window.lon)
       // fetch("https://last-stop-backup.herokuapp.com/apis/stops?lat=37.600377&lon=-122.3875")
         .then(function(res){
           res.json().then(function(data){
@@ -75,8 +75,8 @@ var Stops = React.createClass({
         } else if (departure_time.slice(0,1) === "0") {
           departure_time = departure_time.slice(1);
         }
-
-        var stopLink = "http://www.google.com/maps/dir/My+location/" + stop.stop_name + "/data=!4m2!4m1!3e2"
+        var latlon = window.lat + "," + window.lon
+        var stopLink = "http://www.google.com/maps/dir/" + latlon + "/" + stop.stop_name + "/data=!4m2!4m1!3e2"
         return (
           <div className="stop-container col-sm-12 col-md-12 col-lg-12">
             <div className="header-block col-sm-12 col-md-12 col-lg-12">
