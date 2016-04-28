@@ -1,5 +1,5 @@
 var React = require('react');
-var moment = require('moment-timezone');
+var moment = require('moment');
 
 var SetIntervalMixin = {
   componentWillMount: function() {
@@ -27,22 +27,24 @@ var StopListItem = React.createClass({
   },
 
   componentDidMount: function(){
-    this.setInterval(this.tick, 36000)
+      this.setInterval(this.tick, 36000)
   },
+
   tick: function() {
-    var newTime = moment(this.state.departure_time).subtract(1, "minutes").format()
-    this.setState({
-      departure_time: newTime,
-    })
+    if (moment(this.state.departure_time).diff(moment(), "hours") > 1 ) {
+      var newTime = moment(this.state.departure_time).subtract(1, "minutes").format()
+      this.setState({
+        departure_time: newTime,
+      })
+    }
   },
 
   render: function() {
-    if (moment(this.state.departure_time) - moment() > 3600000 ){
+    if (moment(this.state.departure_time).diff(moment(), "hours") > 2){
       var displayTime = moment(this.state.departure_time).format("h:mm A")
-    } else if (moment(this.state.departure_time) - moment() > 18000000) {
-      var displayTime = null
-    } else {
-      var displayTime = moment(this.state.departure_time).fromNow("mm")
+    } else if (moment(this.state.departure_time).diff(moment(), "hours") > 1 ){
+      debugger;
+      var displayTime = moment(this.state.departure_time).toNow("mm")
     }
     return (
       <div className="time-block col-sm-8 col-md-8 col-lg-8">
