@@ -14,9 +14,9 @@ var StopsContainer = React.createClass({
 
   getInfo: function() {
     var position = navigator.geolocation.getCurrentPosition(function(position){
-      var lat = position.coords.latitude;
-      var lon = position.coords.longitude;
-      fetch("https://last-stop-backup.herokuapp.com/apis/stops?lat="+lat+"&lon="+lon)
+      window.lat = position.coords.latitude;
+      window.lon = position.coords.longitude;
+      fetch("https://last-stop-backup.herokuapp.com/apis/stops?lat="+window.lat+"&lon="+window.lon)
         .then(function(res){return res.json()}.bind(this))
           .then(function(data){
             var agencyList = this.sortData(data);
@@ -84,13 +84,17 @@ var StopsContainer = React.createClass({
 
   render: function() {
     var counter = 0;
+    console.log("hello")
+    console.log(window.lat, window.lon)
+    var latlon = window.lat + "," + window.lon
     if (this.state.stops !== null) {
       var stops = Object.keys(this.state.agencies).map(function(stop){
+      var stopLink = "http://www.google.com/maps/dir/" + latlon + "/" + stop + "/data=!4m2!4m1!3e2"
         return (
           <div className="stop-container col-sm-12 col-md-12 col-lg-12">
             <div className="header-block col-sm-12 col-md-12 col-lg-12">
               <div className="transit-agency col-sm-4 col-md-4 col-lg-4">{this.state.stops[counter].agency_id}</div>
-              <div className="stop-name col-sm-8 col-md-8 col-lg-8">{stop}</div>
+              <div className="stop-name col-sm-8 col-md-8 col-lg-8"><a href={stopLink}>{stop}</a></div>
             </div>
             {this.destinationViewer(stop, counter)}
           </div>

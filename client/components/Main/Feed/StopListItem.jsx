@@ -1,5 +1,5 @@
 var React = require('react');
-var moment = require('moment-timezone');
+var moment = require('moment');
 
 var SetIntervalMixin = {
   componentWillMount: function() {
