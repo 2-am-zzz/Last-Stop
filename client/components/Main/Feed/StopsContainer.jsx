@@ -39,9 +39,7 @@ var StopsContainer = React.createClass({
     var position = navigator.geolocation.getCurrentPosition(function(position){
       window.lat = position.coords.latitude;
       window.lon = position.coords.longitude;
-      // window.lat = "37.59912";
-      // window.lon = "-122.38667";
-      fetch("https://last-stop-backup.herokuapp.com/apis/stops?lat="+window.lat+"&lon="+window.lon)
+      fetch("https://last-stop.herokuapp.com/apis/stops?lat="+window.lat+"&lon="+window.lon)
         .then(function(res){return res.json()}.bind(this))
           .then(function(data){
             var agencyList = this.sortData(data);
