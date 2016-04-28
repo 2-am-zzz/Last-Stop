@@ -61,7 +61,7 @@ a, a:focus, a:active {
 .route-destination-block {
   height: 18vmin;
   text-align: center;
-  padding: 2vmin 0 0 0;
+  padding: 1vmin 0 0 0;
 }
 
 .time-block {
