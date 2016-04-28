@@ -5,15 +5,16 @@ var Loading = require('../Loading.jsx');
 var StopListItem = require('./StopListItem.jsx');
 
 var StopsContainer = React.createClass({
+  counter: 0,
   getInitialState: function() {
     return {
-      stops: null,
-      allStops: null,
-      agencies: null
+      stops: [],
+      allStops: [],
+      agencies: []
     };
   },
-
   updateStops: function(agency) {
+    this.counter = 0;
     if (agency == 0) {
       this.setState({stops: this.state.allStops});
     } else if (agency == 1) {
@@ -34,11 +35,12 @@ var StopsContainer = React.createClass({
       })})
     }
   },
-
   getInfo: function() {
     var position = navigator.geolocation.getCurrentPosition(function(position){
       window.lat = position.coords.latitude;
       window.lon = position.coords.longitude;
+      // window.lat = "37.59912";
+      // window.lon = "-122.38667";
       fetch("https://last-stop-backup.herokuapp.com/apis/stops?lat="+window.lat+"&lon="+window.lon)
         .then(function(res){return res.json()}.bind(this))
           .then(function(data){
@@ -47,18 +49,16 @@ var StopsContainer = React.createClass({
           }.bind(this));
     }.bind(this))
   },
-
   componentDidMount: function () {
     this.getInfo()
-
   },
   sortData: function(data) {
     var agencyList = {};
     data.sort(function(a, b){
       if (a.stop_name < b.stop_name){
-        return 1;
-      } else if (a.stop_name > b.stop_name){
         return -1;
+      } else if (a.stop_name > b.stop_name){
+        return 1;
       }
       return 0;
     })
@@ -71,8 +71,7 @@ var StopsContainer = React.createClass({
     }
     return agencyList;
   },
-
-  destinationViewer: function(key, counter){
+  destinationViewer: function(key){
     var destArr = [];
     var timerArr = [];
     for (var i=1;i<=this.state.agencies[key];i++){
@@ -82,21 +81,22 @@ var StopsContainer = React.createClass({
         React.createElement(
           "div",
           {className: "route-short col-sm-12 col-md-12 col-lg-12"},
-          this.state.stops[counter].route_short_name
+          this.state.stops[this.counter].agency_id
         ),
         React.createElement(
           "div",
-          {className: "fa fa-arrow-circle-right stop-dest col-sm-12 col-md-12 col-lg-12"},
-          this.state.stops[counter].destination
+          {className: "route-short col-sm-12 col-md-12 col-lg-12"},
+          this.state.stops[this.counter].route_short_name
+        ),
+        React.createElement(
+          "div",
+          {className: "stop-dest fa fa-arrow-circle-right col-sm-12 col-md-12 col-lg-12"},
+          this.state.stops[this.counter].destination
         )
       );
-      var timer = <StopListItem key={counter} stop={this.state.stops[counter]} />
-
+      var timer = <StopListItem key={this.counter} stop={this.state.stops[this.counter]} />
       destArr.push(rtDestBlock, timer)
-      counter++;
-      // var dateTime = formatTime(dataClone[counter]);
-      // var time = timerSwap(dateTime[0], dateTime[1]);
-      // timerArr.push(time);
+      this.counter++;
     }
     return (
       <div className="info-block col-sm-12 col-md-12 col-lg-12">
@@ -104,11 +104,7 @@ var StopsContainer = React.createClass({
       </div>
     );
   },
-
   render: function() {
-    var counter = 0;
-    console.log("hello")
-    console.log(window.lat, window.lon)
     var latlon = window.lat + "," + window.lon
     if (this.state.stops !== null && this.state.stops.length != 0) {
       var stops = Object.keys(this.state.agencies).map(function(stop){
@@ -116,10 +112,9 @@ var StopsContainer = React.createClass({
         return (
           <div className="stop-container col-sm-12 col-md-12 col-lg-12">
             <div className="header-block col-sm-12 col-md-12 col-lg-12">
-              <div className="transit-agency col-sm-4 col-md-4 col-lg-4">{this.state.stops[counter].agency_id}</div>
-              <div className="stop-name col-sm-8 col-md-8 col-lg-8"><a href={stopLink}>{stop}</a></div>
+              <div className="stop-name col-sm-12 col-md-12 col-lg-12"><a href={stopLink}>{stop}</a></div>
             </div>
-            {this.destinationViewer(stop, counter)}
+            {this.destinationViewer(stop)}
           </div>
         );
       }.bind(this))
@@ -127,14 +122,13 @@ var StopsContainer = React.createClass({
       return (
         <div className="stop-container col-sm-12 col-md-12 col-lg-12">
           <div className="header-block col-sm-12 col-md-12 col-lg-12">
-            <div className="stop-name col-sm-8 col-md-8 col-lg-8">No Closeby Stops</div>
+            <div className="col-sm-12 col-md-12 col-lg-12">No Stops Nearby</div>
           </div>
         </div>
         );
     } else {
       return <div><Loading/></div>
     }
-
     return(
       <div className="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
         {stops}
