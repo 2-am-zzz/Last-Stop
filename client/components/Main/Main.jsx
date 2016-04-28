@@ -1,13 +1,14 @@
 var React = require('react');
-var StopsContainer = require("./Feed/StopsContainer.jsx");
-var Navbar = require('./Feed/Navbar.jsx');
+var Feed = require("./Feed/Feed.jsx");
+var AgencySelector = require('./Feed/AgencySelector.jsx');
+var Stops = require('./Feed/Feed.jsx');
 
 var Main = React.createClass({
   render: function() {
     return (
       <div className="main">
-        <Navbar />
-        <StopsContainer />
+        <AgencySelector />
+        <Stops />
       </div>
     )
   }
