@@ -39,9 +39,10 @@ var StopsContainer = React.createClass({
     var position = navigator.geolocation.getCurrentPosition(function(position){
       window.lat = position.coords.latitude;
       window.lon = position.coords.longitude;
-      fetch("https://last-stop-backup.herokuapp.com/apis/stops?lat="+window.lat+"&lon="+window.lon)
+      fetch("https://last-stop.herokuapp.com/apis/stops?lat="+window.lat+"&lon="+window.lon)
         .then(function(res){return res.json()}.bind(this))
           .then(function(data){
+            debugger;
             var agencyList = this.sortData(data);
             this.setState({stops: data, allStops: data, agencies: agencyList});
           }.bind(this));
@@ -107,8 +108,6 @@ var StopsContainer = React.createClass({
 
   render: function() {
     var counter = 0;
-    console.log("hello")
-    console.log(window.lat, window.lon)
     var latlon = window.lat + "," + window.lon
     if (this.state.stops !== null && this.state.stops.length != 0) {
       var stops = Object.keys(this.state.agencies).map(function(stop){
@@ -127,7 +126,7 @@ var StopsContainer = React.createClass({
       return (
         <div className="stop-container col-sm-12 col-md-12 col-lg-12">
           <div className="header-block col-sm-12 col-md-12 col-lg-12">
-            <div className="stop-name col-sm-8 col-md-8 col-lg-8">No Closeby Stops</div>
+            <div className="col-sm-8 col-md-8 col-lg-8 col-md-offset-2 col-sm-offset-2">No Closeby Stops</div>
           </div>
         </div>
         );
