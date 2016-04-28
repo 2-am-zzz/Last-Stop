@@ -26774,12 +26774,15 @@
 	var Main = React.createClass({
 	  displayName: 'Main',
 	
+	  agencyFilter: function agencyFilter() {
+	    this.refs.stop.updateStops(this.refs.agency.state.agency_id);
+	  },
 	  render: function render() {
 	    return React.createElement(
 	      'div',
 	      { className: 'main' },
-	      React.createElement(Navbar, null),
-	      React.createElement(StopsContainer, null)
+	      React.createElement(Navbar, { agencyFilter: this.agencyFilter.bind(this), ref: 'agency' }),
+	      React.createElement(StopsContainer, { ref: 'stop' })
 	    );
 	  }
 	});
@@ -26807,19 +26810,42 @@
 	  getInitialState: function getInitialState() {
 	    return {
 	      stops: null,
+	      allStops: null,
 	      agencies: null
 	    };
 	  },
 	
+	  updateStops: function updateStops(agency) {
+	    if (agency == 0) {
+	      this.setState({ stops: this.state.allStops });
+	    } else if (agency == 1) {
+	      this.setState({ stops: this.state.allStops.filter(function (stop) {
+	          return stop.agency_id == "AC TRANSIT";
+	        }) });
+	    } else if (agency == 2) {
+	      this.setState({ stops: this.state.allStops.filter(function (stop) {
+	          return stop.agency_id == "BART";
+	        }) });
+	    } else if (agency == 3) {
+	      this.setState({ stops: this.state.allStops.filter(function (stop) {
+	          return stop.agency_id == "SFMTA";
+	        }) });
+	    } else if (agency == 4) {
+	      this.setState({ stops: this.state.allStops.filter(function (stop) {
+	          return stop.agency_id == "CT";
+	        }) });
+	    }
+	  },
+	
 	  getInfo: function getInfo() {
 	    var position = navigator.geolocation.getCurrentPosition(function (position) {
-	      var lat = position.coords.latitude;
-	      var lon = position.coords.longitude;
-	      fetch("https://last-stop-backup.herokuapp.com/apis/stops?lat=" + lat + "&lon=" + lon).then(function (res) {
+	      window.lat = position.coords.latitude;
+	      window.lon = position.coords.longitude;
+	      fetch("https://last-stop-backup.herokuapp.com/apis/stops?lat=" + window.lat + "&lon=" + window.lon).then(function (res) {
 	        return res.json();
 	      }.bind(this)).then(function (data) {
 	        var agencyList = this.sortData(data);
-	        this.setState({ stops: data, agencies: agencyList });
+	        this.setState({ stops: data, allStops: data, agencies: agencyList });
 	      }.bind(this));
 	    }.bind(this));
 	  },
@@ -26869,8 +26895,12 @@
 	
 	  render: function render() {
 	    var counter = 0;
-	    if (this.state.stops !== null) {
+	    console.log("hello");
+	    console.log(window.lat, window.lon);
+	    var latlon = window.lat + "," + window.lon;
+	    if (this.state.stops !== null && this.state.stops.length != 0) {
 	      var stops = Object.keys(this.state.agencies).map(function (stop) {
+	        var stopLink = "http://www.google.com/maps/dir/" + latlon + "/" + stop + "/data=!4m2!4m1!3e2";
 	        return React.createElement(
 	          "div",
 	          { className: "stop-container col-sm-12 col-md-12 col-lg-12" },
@@ -26885,12 +26915,30 @@
 	            React.createElement(
 	              "div",
 	              { className: "stop-name col-sm-8 col-md-8 col-lg-8" },
-	              stop
+	              React.createElement(
+	                "a",
+	                { href: stopLink },
+	                stop
+	              )
 	            )
 	          ),
 	          this.destinationViewer(stop, counter)
 	        );
 	      }.bind(this));
+	    } else if (this.state.stops != null && this.state.stops.length == 0) {
+	      return React.createElement(
+	        "div",
+	        { className: "stop-container col-sm-12 col-md-12 col-lg-12" },
+	        React.createElement(
+	          "div",
+	          { className: "header-block col-sm-12 col-md-12 col-lg-12" },
+	          React.createElement(
+	            "div",
+	            { className: "stop-name col-sm-8 col-md-8 col-lg-8" },
+	            "No Closeby Stops"
+	          )
+	        )
+	      );
 	    } else {
 	      return React.createElement(
 	        "div",
@@ -58694,6 +58742,21 @@
 	var Agencies = React.createClass({
 	  displayName: 'Agencies',
 	
+	  getInitialState: function getInitialState() {
+	    return {
+	      agency_id: 0
+	    };
+	  },
+	
+	  triggering: function triggering(event) {
+	    var current_agency_id = event.target.id;
+	    if (current_agency_id == this.state.agency_id) {
+	      this.setState({ agency_id: 0 }, this.props.agencyFilter);
+	    } else {
+	      this.setState({ agency_id: current_agency_id }, this.props.agencyFilter);
+	    }
+	  },
+	
 	  AgencyOptions: {
 	    "AC Transit": {
 	      "field": "ACT",
@@ -58714,13 +58777,15 @@
 	  },
 	
 	  render: function render() {
+	    var counter = 0;
 	    return React.createElement(
 	      'div',
 	      { className: 'row order-selector' },
 	      _.map(this.AgencyOptions, function (val, key) {
+	        counter++;
 	        return React.createElement(
 	          'div',
-	          { className: 'order-option col-lg-3 col-md-3 col-xs-3 clickable', key: val.field },
+	          { id: counter, className: 'order-option col-lg-3 col-md-3 col-xs-3 clickable', onClick: this.triggering, key: val.field },
 	          React.createElement('i', { className: val.icon }),
 	          ' ',
 	          key
