@@ -54,14 +54,19 @@ a, a:focus, a:active {
   font-size: 5vmin;
 }
 
+.stop-dest {
+  font-size: 4vmin;
+}
+
 .route-destination-block {
+  height: 18vmin;
   text-align: center;
   padding: 2vmin 0 0 0;
 }
 
 .time-block {
+  height: 18vmin;
   text-align: center;
   font-size: 10vmin;
-  border-left: 1px solid black;
+  float: right;
 }
-

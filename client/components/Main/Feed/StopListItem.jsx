@@ -22,7 +22,6 @@ var StopListItem = React.createClass({
       var time = moment().hour(parseInt(this.props.stop.departure_time.slice(0, 2))).minutes(parseInt(this.props.stop.departure_time.slice(3,5)))
     }
     this.setState({
-      // departure_time: '2014-04-25T' + this.props.stop.departure_time + 'Z'
       departure_time: time
     })
   },
@@ -46,7 +45,7 @@ var StopListItem = React.createClass({
       var displayTime = moment(this.state.departure_time).fromNow("mm")
     }
     return (
-      <div>
+      <div className="time-block col-sm-8 col-md-8 col-lg-8">
         {displayTime}
       </div>
     )
