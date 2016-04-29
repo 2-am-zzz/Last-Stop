@@ -17,31 +17,32 @@ var StopListItem = React.createClass({
    mixins: [SetIntervalMixin],
   componentWillMount: function() {
     if (parseInt(this.props.stop.departure_time.slice(0, 2)) <= parseInt(moment().format("H"))) {
-      var time = moment().hour(parseInt(this.props.stop.departure_time.slice(0, 2))).minutes(parseInt(this.props.stop.departure_time.slice(3,5))).add(24, "hours")
+      var departTime = moment().hour(parseInt(this.props.stop.departure_time.slice(0, 2))).minutes(parseInt(this.props.stop.departure_time.slice(3,5))).add(24, "hours")
     } else {
-      var time = moment().hour(parseInt(this.props.stop.departure_time.slice(0, 2))).minutes(parseInt(this.props.stop.departure_time.slice(3,5)))
+      var departTime = moment().hour(parseInt(this.props.stop.departure_time.slice(0, 2))).minutes(parseInt(this.props.stop.departure_time.slice(3,5)))
     }
     this.setState({
-      departure_time: time
+      departure_time: departTime
     })
   },
 
   componentDidMount: function(){
-    this.setInterval(this.tick, 36000)
+      this.setInterval(this.tick, 36000)
   },
+
   tick: function() {
-    var newTime = moment(this.state.departure_time).subtract(1, "minutes").format()
-    this.setState({
-      departure_time: newTime,
-    })
+    if (moment(this.state.departure_time).diff(moment(), "hours") < 1 ) {
+      var newTime = moment(this.state.departure_time).subtract(1, "minutes").format()
+      this.setState({
+        departure_time: newTime
+      })
+    }
   },
 
   render: function() {
-    if (moment(this.state.departure_time) - moment() > 3600000 ){
+    if (moment(this.state.departure_time).diff(moment(), "hours") > 1){
       var displayTime = moment(this.state.departure_time).format("h:mm A")
-    } else if (moment(this.state.departure_time) - moment() > 18000000) {
-      var displayTime = null
-    } else {
+    } else if (moment(this.state.departure_time).diff(moment(), "minutes") > 2 ){
       var displayTime = moment(this.state.departure_time).fromNow("mm")
     }
     return (

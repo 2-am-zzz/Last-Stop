@@ -103,6 +103,7 @@ var StopsContainer = React.createClass({
     );
   },
   render: function() {
+    var counter = 0;
     var latlon = window.lat + "," + window.lon
     if (this.state.stops !== null && this.state.stops.length != 0) {
       var stops = Object.keys(this.state.agencies).map(function(stop){
@@ -120,12 +121,10 @@ var StopsContainer = React.createClass({
       return (
         <div className="stop-container col-sm-12 col-md-12 col-lg-12">
           <div className="header-block col-sm-12 col-md-12 col-lg-12">
-            <div className="col-sm-12 col-md-12 col-lg-12">No Stops Nearby</div>
+            <div className="col-sm-8 col-md-8 col-lg-8 col-md-offset-2 col-sm-offset-2">No Stops Nearby</div>
           </div>
         </div>
         );
-    } else {
-      return <div><Loading/></div>
     }
     return(
       <div className="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
