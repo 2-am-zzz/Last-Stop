@@ -40,9 +40,9 @@ var StopListItem = React.createClass({
   },
 
   render: function() {
-    if (moment(this.state.departure_time).diff(moment(), "hours") > 2){
+    if (moment(this.state.departure_time).diff(moment(), "hours") > 1){
       var displayTime = moment(this.state.departure_time).format("h:mm A")
-    } else if (moment(this.state.departure_time).diff(moment(), "hours") > 1 ){
+    } else if (moment(this.state.departure_time).diff(moment(), "minutes") > 2 ){
       var displayTime = moment(this.state.departure_time).fromNow("mm")
     }
     return (
