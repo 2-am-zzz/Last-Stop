@@ -46,7 +46,7 @@ class Stop
     end
 
     stops = Stop.where(service_id: service_id)
-    s = stops.geo_near(location).max_distance(0.005).to_a
+    s = stops.geo_near(location).max_distance(0.015).to_a
   end
 
 end

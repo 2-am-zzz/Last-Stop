@@ -51,17 +51,22 @@ a, a:focus, a:active {
 }
 
 .route-short {
-  font-size: 5vmin;
+  font-size: 3vmin;
+}
+
+.stop-dest {
+  font-size: 3vmin;
 }
 
 .route-destination-block {
+  height: 18vmin;
   text-align: center;
   padding: 1vmin 0 0 0;
 }
 
 .time-block {
+  height: 18vmin;
   text-align: center;
   font-size: 10vmin;
+  float: right;
 }
-
-
