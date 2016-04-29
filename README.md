@@ -1,6 +1,9 @@
 ## Last-Stop
 A DevBootcamp final project focusing on alerting users of the time of the last bus/train/BART to arrive.
 
+### Presentation:
+[http://last-stop-presentation.surge.sh/](http://last-stop-presentation.surge.sh/)
+
 ### Authored by:
 - Cyrus Vattes (@cyvattes)
 - Thomas Huang (@tmashuang)
