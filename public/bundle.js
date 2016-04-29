@@ -26818,24 +26818,26 @@
 	  updateStops: function updateStops(agency) {
 	    this.counter = 0;
 	    if (agency == 0) {
-	      this.setState({ stops: this.state.allStops });
+	      var stops = this.state.allStops;
 	    } else if (agency == 1) {
-	      this.setState({ stops: this.state.allStops.filter(function (stop) {
-	          return stop.agency_id == "AC TRANSIT";
-	        }) });
+	      var stops = this.state.allStops.filter(function (stop) {
+	        return stop.agency_id == "AC TRANSIT";
+	      });
 	    } else if (agency == 2) {
-	      this.setState({ stops: this.state.allStops.filter(function (stop) {
-	          return stop.agency_id == "BART";
-	        }) });
+	      var stops = this.state.allStops.filter(function (stop) {
+	        return stop.agency_id == "BART";
+	      });
 	    } else if (agency == 3) {
-	      this.setState({ stops: this.state.allStops.filter(function (stop) {
-	          return stop.agency_id == "SFMTA";
-	        }) });
+	      var stops = this.state.allStops.filter(function (stop) {
+	        return stop.agency_id == "SFMTA";
+	      });
 	    } else if (agency == 4) {
-	      this.setState({ stops: this.state.allStops.filter(function (stop) {
-	          return stop.agency_id == "CT";
-	        }) });
+	      var stops = this.state.allStops.filter(function (stop) {
+	        return stop.agency_id == "CT";
+	      });
 	    }
+	    var agencyList = this.sortData(stops);
+	    this.stateSetter(stops, agencyList);
 	  },
 	  getInfo: function getInfo() {
 	    var position = navigator.geolocation.getCurrentPosition(function (position) {
@@ -26851,6 +26853,9 @@
 	  },
 	  componentDidMount: function componentDidMount() {
 	    this.getInfo();
+	  },
+	  stateSetter: function stateSetter(data, agencyList) {
+	    this.setState({ stops: data, agencies: agencyList });
 	  },
 	  sortData: function sortData(data) {
 	    var agencyList = {};
