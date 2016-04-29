@@ -26887,6 +26887,7 @@
 	    );
 	  },
 	  render: function render() {
+	    var counter = 0;
 	    var latlon = window.lat + "," + window.lon;
 	    if (this.state.stops !== null && this.state.stops.length != 0) {
 	      var stops = Object.keys(this.state.agencies).map(function (stop) {
@@ -26919,16 +26920,10 @@
 	          { className: "header-block col-sm-12 col-md-12 col-lg-12" },
 	          React.createElement(
 	            "div",
-	            { className: "col-sm-12 col-md-12 col-lg-12" },
+	            { className: "col-sm-8 col-md-8 col-lg-8 col-md-offset-2 col-sm-offset-2" },
 	            "No Stops Nearby"
 	          )
 	        )
-	      );
-	    } else {
-	      return React.createElement(
-	        "div",
-	        null,
-	        React.createElement(Loading, null)
 	      );
 	    }
 	    return React.createElement(
@@ -44590,31 +44585,32 @@
 	  mixins: [SetIntervalMixin],
 	  componentWillMount: function componentWillMount() {
 	    if (parseInt(this.props.stop.departure_time.slice(0, 2)) <= parseInt(moment().format("H"))) {
-	      var time = moment().hour(parseInt(this.props.stop.departure_time.slice(0, 2))).minutes(parseInt(this.props.stop.departure_time.slice(3, 5))).add(24, "hours");
+	      var departTime = moment().hour(parseInt(this.props.stop.departure_time.slice(0, 2))).minutes(parseInt(this.props.stop.departure_time.slice(3, 5))).add(24, "hours");
 	    } else {
-	      var time = moment().hour(parseInt(this.props.stop.departure_time.slice(0, 2))).minutes(parseInt(this.props.stop.departure_time.slice(3, 5)));
+	      var departTime = moment().hour(parseInt(this.props.stop.departure_time.slice(0, 2))).minutes(parseInt(this.props.stop.departure_time.slice(3, 5)));
 	    }
 	    this.setState({
-	      departure_time: time
+	      departure_time: departTime
 	    });
 	  },
 	
 	  componentDidMount: function componentDidMount() {
 	    this.setInterval(this.tick, 36000);
 	  },
+	
 	  tick: function tick() {
-	    var newTime = moment(this.state.departure_time).subtract(1, "minutes").format();
-	    this.setState({
-	      departure_time: newTime
-	    });
+	    if (moment(this.state.departure_time).diff(moment(), "hours") < 1) {
+	      var newTime = moment(this.state.departure_time).subtract(1, "minutes").format();
+	      this.setState({
+	        departure_time: newTime
+	      });
+	    }
 	  },
 	
 	  render: function render() {
-	    if (moment(this.state.departure_time) - moment() > 3600000) {
+	    if (moment(this.state.departure_time).diff(moment(), "hours") > 1) {
 	      var displayTime = moment(this.state.departure_time).format("h:mm A");
-	    } else if (moment(this.state.departure_time) - moment() > 18000000) {
-	      var displayTime = null;
-	    } else {
+	    } else if (moment(this.state.departure_time).diff(moment(), "minutes") > 2) {
 	      var displayTime = moment(this.state.departure_time).fromNow("mm");
 	    }
 	    return React.createElement(
