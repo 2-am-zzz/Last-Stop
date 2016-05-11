@@ -32,7 +32,6 @@ A DevBootcamp final project focusing on alerting users of the time of the last b
 - React Frontend
 - Bootstrap CSS Framework
 - SFMTA, AC Trans, BART, and Caltrain Datasets
-- Minitest
 
 ## Team Dynamics
 
@@ -63,13 +62,13 @@ A DevBootcamp final project focusing on alerting users of the time of the last b
 ## Setup
 
 ### Mac OSX
-brew update && brew upgrade ruby-build
-rbenv install 2.2.3
-gem install bundle
-bundle
-npm install
-npm run build
-npm start
+- brew update && brew upgrade ruby-build
+- rbenv install 2.2.3
+- gem install bundle
+- bundle
+- npm install
+- npm run build
+- npm start
 
 
 ## Database Update Procedure
