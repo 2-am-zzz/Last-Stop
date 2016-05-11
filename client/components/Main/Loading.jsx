@@ -1,5 +1,7 @@
 var React = require('react');
 
+
+// Please fix this link ASAP...
 var Loading = React.createClass({
   render: function() {
     return(
