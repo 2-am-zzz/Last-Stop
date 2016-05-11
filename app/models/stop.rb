@@ -54,11 +54,11 @@ class Stop
     end
 
     # A basic mongoid query meant to get the correct timetables for today.
-    stops = Stop.where(service_id: service_id)
+    # stops = Stop.where(service_id: service_id)
     # Returns stops nearby.
     # s = stops.geo_near(location).max_distance(0.015).to_a
     # s = stops.geo_near([37.784658, -122.397335]).max_distance(0.015).to_a
-    s = Stop.where(:loc => { "$within" => { "$center" => [location, 0.015 ]}})
+    s = Stop.where(:loc => { "$within" => { "$center" => [location, 0.015 ]}}, :service_id => service_id)
   end
 
 end
