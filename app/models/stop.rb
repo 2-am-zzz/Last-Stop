@@ -15,19 +15,27 @@ class Stop
   field :agency_id, type: String
   field :service_id, type: Integer
   field :loc, type: Array
+  # Important for the location to work.
   index({loc: "2d"})
 
   def add_loc
     self.update_attributes(loc: [self.stop_lat, self.stop_lon])
   end
 
+  # The main method to determine closest stops.
   def self.near(location)
+
+    # Determine the current time.
     day = Time.now.wday
     current_hr = Time.now.hour
 
+    # If the day is Sunday...
     if day == 0
+      # If there is spillover, use the previous timetable for Saturday.
+      # This is due to timetables not conforming to a 24 hour cycle that is aligned with the days.
       if (0..3).include?(current_hr)
         service_id = 2
+      # Else use the current timetable for Sunday.
       else
         service_id = 3
       end
@@ -45,8 +53,12 @@ class Stop
       end
     end
 
+    # A basic mongoid query meant to get the correct timetables for today.
     stops = Stop.where(service_id: service_id)
-    s = stops.geo_near(location).max_distance(0.015).to_a
+    # Returns stops nearby.
+    # s = stops.geo_near(location).max_distance(0.015).to_a
+    # s = stops.geo_near([37.784658, -122.397335]).max_distance(0.015).to_a
+    s = Stop.where(:loc => { "$within" => { "$center" => [location, 0.015 ]}})
   end
 
 end
