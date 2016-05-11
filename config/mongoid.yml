@@ -5,11 +5,7 @@ production:
 development:
   clients:
     default:
-      database: last_stop_development
-      hosts:
-        - localhost:27017
-      options:
-  options:
+      uri: <%= ENV['MONGODB_URI'] %>
 test:
   clients:
     default:
