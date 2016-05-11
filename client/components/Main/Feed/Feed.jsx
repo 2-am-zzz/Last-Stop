@@ -1,6 +1,5 @@
 var React = require("react");
 var request = require("superagent");
-// var AppStops = require("../stops.jsx");
 var Loading = require('../Loading.jsx');
 
 var Stops = React.createClass({
@@ -15,8 +14,7 @@ var Stops = React.createClass({
     var position = navigator.geolocation.getCurrentPosition(function(position){
       window.lat = position.coords.latitude;
       window.lon = position.coords.longitude;
-      fetch("https://last-stop-backup.herokuapp.com/apis/stops?lat="+window.lat+"&lon="+window.lon)
-      // fetch("https://last-stop-backup.herokuapp.com/apis/stops?lat=37.600377&lon=-122.3875")
+      fetch("https://last-stop.herokuapp.com/apis/stops?lat="+window.lat+"&lon="+window.lon)
         .then(function(res){
           res.json().then(function(data){
               that.setState({stops: data, loaded:true});
@@ -27,12 +25,7 @@ var Stops = React.createClass({
 
   componentWillMount: function () {
     this.getInfo(this);
-    //comment
   },
-
-  // componentDidMount: function() {
-  //   setInterval(forceUpdate(), 3000);
-  // },
 
   render:function(){
     if (this.state.loaded !== false ) {

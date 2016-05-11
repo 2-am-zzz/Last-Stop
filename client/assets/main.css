@@ -20,10 +20,6 @@ body {
   color: inherit;
 }
 
-.nav .dropdown ul {
-  font-size: 20px;
-}
-
 .nav-icon {
   padding-top: 10px;
   padding-right: 10px;
@@ -61,12 +57,6 @@ body {
   border-right: none;
 }
 
-.login {
-  font-size: 3em;
-  font-weight: 300;
-  padding: 100px;
-}
-
 .content {
   padding: 0px;
 }
@@ -78,142 +68,4 @@ body {
 
 .main {
   padding-bottom: 1em;
-}
-
-.add-button {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 30px;
-  background-color: #fff;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 55px;
-  color: #1ec7c7;
-  font-size: 30px;
-  border-top: 2px solid #7AF5F5;
-}
-
-.add-button .icon {
-  margin-top: -5px;
-}
-
-.poll-list {
-  height: 100%;
-}
-
-.poll {
-  background-color: #fff;
-  /*margin-bottom: 10px;*/
-  padding: 20px 20px;
-  border-bottom: 1px #f0f0f4 solid;
-  display: flex;
-  justify-content: space-between;
-}
-
-.poll-left {
-  display: flex;
-  flex-direction: row;
-}
-
-.poll-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.poll-index {
-  font-size: 40px;
-  color: #f2f2f2;
-  margin-right: 20px;
-}
-
-.poll-info {
-  font-size: 15px;
-  color: #CFD0C2;
-}
-
-.poll .question {
-  padding-top: 3px;
-  font-size: 18px;
-}
-
-.poll-votes-label {
-  text-align: center;
-  color: #CFD0C2;
-}
-
-.poll-votes-value {
-  font-size: 3em;
-  font-weight: 300;
-  color: #1ec7c7;
-  margin-top: -8px;
-}
-
-.poll-answer {
-  margin-top: 10px;
-}
-
-.answer-options {
-  margin-top: 5px;
-  display: inline;
-}
-
-.answer-options ul {
-  display: inline;
-  list-style: none;
-  margin-bottom: 0;
-  padding-left: 0px;
-  height: 100%;
-}
-
-.option-result {
-  display: inline-block;
-  height: 20px;
-  margin-right: 10px;
-  border: 1px #1ec7c7 solid;
-  height: 100%;
-  color: #242621;
-  margin-bottom: 2px;
-}
-
-.option-result a {
-  height: 100%;
-}
-
-.input-field {
-  font-weight: 300;
-  padding: 30px 50px;
-  display: flex;
-  flex-direction: column;
-}
-
-.input-field .title {
-  font-size: 35px;
-  color: #1ec7c7;
-}
-
-.input-field .btn {
-  background-color: #1ec7c7;
-  border-color: #ccc;
-  color: #fff;
-}
-
-.input-field ol li span {
-  color: #1ec7c7;
-  margin: 2px;
-  font-size: 25px;
-}
-
-.input-field ol li a {
-  color: #1ec7c7;
-}
-
-.add-option {
-  color: #fff;
-}
-
-.voted {
-  /*background-color: #DEDEDE;*/
 }
